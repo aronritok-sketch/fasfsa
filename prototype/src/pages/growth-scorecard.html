@@ -1,0 +1,86 @@
+<!--
+title: Digital Growth Scorecard for Florida Businesses
+description: 15 questions, 5 minutes: find out whether positioning, website, search or follow-up is your biggest bottleneck.
+path: /growth-scorecard/
+type: scorecard
+crumbs: Growth Scorecard
+scripts: scorecard
+-->
+
+<section class="hero hero--inner" id="hero">
+  <div class="wrap grid">
+    <div class="hero__text col-8">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Growth Scorecard</li></ol></nav>
+      <span class="eyebrow">Digital Growth Scorecard · 15 questions · 5 minutes</span>
+      <h1 class="display">Where is your growth actually stuck?</h1>
+      <p class="lead">The Digital Growth Scorecard is a 15-question, 5-minute assessment for Florida business owners. It scores five areas — positioning, website, search visibility, conversion and follow-up — and shows your biggest bottleneck.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="scorecard-start">
+  <div class="wrap grid">
+    <div class="col-5 stack-lg">
+      <h2 class="h3">What you get</h2>
+      <ul class="fit fit--yes" style="display:block">
+        <li>Your score across five areas</li>
+        <li>Your #1 priority</li>
+        <li>Three practical next steps you can take this month</li>
+      </ul>
+    </div>
+    <div class="col-6 start-7">
+      <form class="form form-panel" id="sc-lead" novalidate data-form-id="scorecard">
+        <div class="hp" aria-hidden="true"><label for="sc-hp">Company</label><input id="sc-hp" name="company_hp" tabindex="-1" autocomplete="off"></div>
+        <div class="field"><label for="sc-name">Name</label><input class="input" id="sc-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="sc-email">Email</label><input class="input" id="sc-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="sc-site">Company website</label><input class="input" id="sc-site" name="website" type="url" inputmode="url" placeholder="https://" autocomplete="url"></div>
+        <button class="btn" type="submit">Start the scorecard <span aria-hidden="true">→</span></button>
+        <p class="form-note">Your results appear on screen right away. I’ll also email them to you — no newsletter, no spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="scorecard-quiz" hidden>
+  <div class="wrap grid">
+    <div class="col-8 start-3">
+      <div class="score-progress" aria-live="polite">
+        <div class="score-progress__bar"><i id="sc-bar"></i></div>
+        <span class="score-progress__txt" id="sc-progress">0 of 15 answered</span>
+      </div>
+      <form id="sc-quiz" novalidate>
+        <div id="sc-questions"></div>
+        <div class="actions mt-6">
+          <button class="btn" type="submit" id="sc-submit">See my results <span aria-hidden="true">→</span></button>
+          <span class="small" id="sc-missing" role="status"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="scorecard-results" hidden tabindex="-1">
+  <div class="wrap grid">
+    <div class="col-4 stack">
+      <span class="eyebrow">Your score</span>
+      <p class="score-total"><span id="sc-total">0</span><small>/100</small></p>
+      <p class="body" id="sc-summary"></p>
+    </div>
+    <div class="col-7 start-6 score-results">
+      <div class="score-bars" id="sc-bars"></div>
+      <div class="stack">
+        <p class="label">Your #1 priority · <span id="sc-weakest"></span></p>
+        <p class="body" id="sc-why"></p>
+        <h2 class="h3">Three next steps for this month</h2>
+        <ol class="steps" id="sc-steps"></ol>
+        <p class="small">Recommended reading: <a class="link" id="sc-article" href="/insights/"></a></p>
+      </div>
+      <div class="form-panel">
+        <h2 class="h3">Want me to review your results with you?</h2>
+        <p class="body">In a 30-minute call we’ll go through your scores and your website together, and decide what to fix first.</p>
+        <div class="actions"><a class="btn" href="/strategy-call/">Book a strategy call <span aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<noscript><div class="wrap"><p class="body">The scorecard needs JavaScript. You can also <a class="link" href="/strategy-call/">book a strategy call</a> and we’ll go through it together.</p></div></noscript>

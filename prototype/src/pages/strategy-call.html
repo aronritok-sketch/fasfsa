@@ -1,0 +1,145 @@
+<!--
+title: Book a Strategy Call — Áron Ritók-Filip
+description: A free 30-minute call to find where your growth is stuck. No pitch, no obligation.
+path: /strategy-call/
+type: strategy_call
+crumbs: Strategy Call
+scripts: forms
+-->
+
+<section class="hero hero--inner" id="hero">
+  <div class="wrap grid">
+    <div class="hero__text col-8">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Strategy Call</li></ol></nav>
+      <span class="eyebrow">Strategy Call · 30 minutes · Free</span>
+      <h1 class="display">Book a strategy call</h1>
+      <p class="lead">30 minutes with Áron to look at your business, your goals and where growth is getting stuck. No pitch deck, no obligation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="call">
+  <div class="wrap grid">
+    <div class="col-7">
+      <div class="form-panel">
+        <div class="form-steps" aria-hidden="true">
+          <span class="is-current" id="step-ind-1">1 · About you</span>
+          <span id="step-ind-2">2 · Your business</span>
+          <span id="step-ind-3">3 · Choose a time</span>
+        </div>
+
+        <form class="form" id="call-form" novalidate data-form-id="strategy_call">
+          <div class="hp" aria-hidden="true"><label for="cf-company">Company</label><input id="cf-company" name="company_hp" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="ts" id="cf-ts">
+
+          <fieldset class="choice-group" id="call-step-1">
+            <legend class="h3">Step 1 of 2 — How can I reach you?</legend>
+            <div class="form-row form-row--2 mt-3">
+              <div class="field"><label for="cf-name">Name</label><input class="input" id="cf-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="cf-email">Email</label><input class="input" id="cf-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="form-row form-row--2 mt-3">
+              <div class="field"><label for="cf-phone">Phone</label><input class="input" id="cf-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label for="cf-site">Company website <span class="hint">(if you have one)</span></label><input class="input" id="cf-site" name="website" type="url" inputmode="url" placeholder="https://" autocomplete="url"></div>
+            </div>
+            <div class="actions mt-4">
+              <button class="btn" type="button" id="call-next">Continue <span aria-hidden="true">→</span></button>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-group" id="call-step-2" hidden>
+            <legend class="h3">Step 2 of 2 — A little about the business</legend>
+            <div class="form-row form-row--2 mt-3">
+              <div class="field">
+                <label for="cf-industry">Industry</label>
+                <select class="select" id="cf-industry" name="industry" required>
+                  <option value="">Select…</option>
+                  <option>Home services &amp; contractors</option>
+                  <option>Remodeling &amp; custom building</option>
+                  <option>Pool, roofing, HVAC or landscaping</option>
+                  <option>Marine</option>
+                  <option>Hospitality (hotel, restaurant, charter, venue)</option>
+                  <option>Clinic or professional services</option>
+                  <option>Specialty retail</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cf-city">City</label>
+                <select class="select" id="cf-city" name="city" required>
+                  <option value="">Select…</option>
+                  <option>Fort Myers</option><option>Naples</option><option>Cape Coral</option><option>Other SWFL</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row--2 mt-3">
+              <div class="field">
+                <label for="cf-challenge">What’s the main challenge?</label>
+                <select class="select" id="cf-challenge" name="challenge" required>
+                  <option value="">Select…</option>
+                  <option>Not enough leads</option><option>Wrong-fit leads</option><option>Low visibility on Google</option><option>Website outdated</option><option>Not sure what’s working</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cf-budget">Monthly marketing budget</label>
+                <select class="select" id="cf-budget" name="budget" required>
+                  <option value="">Select…</option>
+                  <option>Under $1,000</option><option>$1,000–$3,000</option><option>$3,000–$7,500</option><option>$7,500+</option><option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <fieldset class="choice-group field mt-3">
+              <legend>Timing</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="timing" value="now" id="cf-t1" checked><span>Now</span></label>
+                <label class="chip"><input type="radio" name="timing" value="1-3" id="cf-t2"><span>1–3 months</span></label>
+                <label class="chip"><input type="radio" name="timing" value="exploring" id="cf-t3"><span>Just exploring</span></label>
+              </div>
+            </fieldset>
+            <div class="actions mt-4">
+              <button class="btn" type="submit">Continue to choose a time <span aria-hidden="true">→</span></button>
+              <button class="arrow-link" type="button" id="call-back" style="background:none;border:0;cursor:pointer">← Back</button>
+            </div>
+          </fieldset>
+
+          <div id="call-step-3" hidden>
+            <div class="booking-facade">
+              <span class="eyebrow">Step 3 — Choose a time</span>
+              <h2 class="h3">Thanks, <span id="cf-first">there</span>. Pick a 30-minute slot that suits you.</h2>
+              <p class="body">The booking calendar loads here on click, so it doesn’t slow the page down.</p>
+              <p class="small"><span class="tbd">[Booking tool: Cal.com, Calendly or Google Calendar booking — to decide]</span></p>
+              <a class="btn" href="/strategy-call/thank-you/" data-track="booking_open">Open the calendar <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <p class="form-note" id="call-reassure">You’ll get a confirmation email right away. If it’s not a fit, I’ll tell you — and point you somewhere better.</p>
+          <p class="form-note" role="status" aria-live="polite" id="call-status"></p>
+        </form>
+      </div>
+    </div>
+
+    <aside class="col-4 start-9 side-panel" aria-label="About the call">
+      <div class="photo" role="img" aria-label="Placeholder for a photo of Áron Ritók-Filip">
+        <span class="photo__note"><span>Headshot · 4:5</span><span>Shoot pending</span></span>
+      </div>
+      <p class="eyebrow">Based in Southwest Florida</p>
+      <div class="contact-lines">
+        <a href="tel:+12390000000" data-track="click_to_call"><span class="tbd">[+1 (239) 000-0000]</span></a>
+        <a href="mailto:hello@example.com" data-track="click_to_email"><span class="tbd">[hello@domain]</span></a>
+      </div>
+      <hr class="rule">
+      <div class="stack-sm">
+        <h2 class="h3">What happens on the call</h2>
+        <ul class="fit fit--yes" style="display:block">
+          <li>We talk through your business, customers and current marketing</li>
+          <li>I share first observations on your website and search visibility (I’ll look before we meet)</li>
+          <li>We decide together whether a growth audit makes sense</li>
+        </ul>
+      </div>
+      <figure class="testimonial" style="gap:var(--s-2)">
+        <blockquote style="font-size:1.5rem"><span class="tbd">[One short client testimonial]</span></blockquote>
+        <figcaption><span class="tbd">[Name, Company]</span></figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
