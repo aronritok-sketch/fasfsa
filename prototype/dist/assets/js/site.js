@@ -51,7 +51,7 @@
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu && !menu.hidden) setMenu(false); });
 
   /* Reveal: content is visible at rest; the fade-up plays just before it scrolls into view. */
-  var reveal = doc.querySelectorAll('.section-head, .block, .service-card, .case-card, .insight-card, .stat, .process__step, .steps li, .photo, .fit__col, .principles li');
+  var reveal = doc.querySelectorAll('.section-head, .block, .service-card, .case-card, .work-item, .insight-card, .stat, .process__step, .steps li, .photo, .photo-img, .fit__col, .principles li');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var fold = window.innerHeight;
     var io = new IntersectionObserver(function (entries) {

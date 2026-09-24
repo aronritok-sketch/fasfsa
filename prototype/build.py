@@ -74,6 +74,87 @@ def crumbs_of(page: dict) -> list:
     return items
 
 
+# ---------------------------------------------------------------- images
+
+# HelloProVision projects. Screenshots/photos go in src/assets/img/projects/<slug>-<n>.(jpg|png|webp)
+# and replace the placeholder frames automatically on the next build.
+PROJECTS = {
+    "imperial-kitchens": "Imperial Kitchens",
+    "factory-fm": "Factory FM",
+    "raven-protect": "Raven Protect",
+    "tank-empire-budapest": "Tank Empire Budapest",
+    "mandala": "Mandala",
+    "kaeri": "Kaeri",
+}
+IMG_EXT = (".avif", ".webp", ".jpg", ".jpeg", ".png")
+RATIOS = {"portrait", "land", "wide", "square"}
+XTAG = re.compile(r'<x-(photo|project)\b([^>]*)>\s*</x-\1>', re.S)
+ATTR = re.compile(r'([\w-]+)="([^"]*)"')
+
+
+def parse_attrs(raw: str) -> dict:
+    """key="value" pairs plus bare boolean attributes (dark, eager)."""
+    attrs = dict(ATTR.findall(raw))
+    for flag in re.findall(r'(?:^|\s)([\w-]+)(?=\s|$)', ATTR.sub(" ", raw)):
+        attrs[flag] = ""
+    return attrs
+
+
+def find_image(base: str):
+    for ext in IMG_EXT:
+        f = SRC / "assets/img" / (base + ext)
+        if f.exists():
+            return "assets/img/" + base + ext
+    return None
+
+
+def used_images(pages: list) -> list:
+    found = set()
+    for page in pages:
+        for kind, attrs in XTAG.findall(page["content"]):
+            a = parse_attrs(attrs)
+            base = a.get("src") or f'projects/{a.get("slug")}-{a.get("n", "1")}'
+            img = find_image(base)
+            if img:
+                found.add(img)
+    return sorted(found)
+
+
+def render_photos(markup: str, root: str) -> str:
+    def repl(m):
+        kind, a = m.group(1), parse_attrs(m.group(2))
+        ratio = a.get("ratio", "land" if kind == "project" else "portrait")
+        ratio = ratio if ratio in RATIOS else "land"
+        load = 'loading="eager" fetchpriority="high"' if "eager" in a else 'loading="lazy"'
+        if kind == "project":
+            slug = a["slug"]
+            name = PROJECTS[slug]
+            n = a.get("n", "1")
+            alt = html.escape(a.get("alt") or f"{name} — project by HelloProVision", quote=True)
+            img = find_image(f"projects/{slug}-{n}")
+            tone = (list(PROJECTS).index(slug) + int(n)) % 6 + 1
+            if img:
+                view = f'<img src="{root}{img}" alt="{alt}" {load} decoding="async">'
+            else:
+                view = (f'<div class="shot__ph" aria-hidden="true"><span class="shot__nav"><i></i><i></i><i></i></span>'
+                        f'<span class="shot__title">{html.escape(name)}</span>'
+                        f'<span class="shot__lines"><i></i><i></i><i></i></span><span class="shot__btn"></span></div>')
+            role = '' if img else f' role="img" aria-label="{alt}"'
+            return (f'<figure class="shot shot--{ratio} tone-{tone}"{role}>'
+                    f'<div class="shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>{html.escape(name)}</span></div>'
+                    f'<div class="shot__view">{view}</div></figure>')
+        # photo of Áron / on-location photography
+        alt = html.escape(a.get("alt", ""), quote=True)
+        img = find_image(a["src"])
+        dark = " photo--dark" if "dark" in a else ""
+        if img:
+            return f'<img class="photo-img photo-img--{ratio}" src="{root}{img}" alt="{alt}" {load} decoding="async">'
+        left, _, right = a.get("note", "Photo|Shoot pending").partition("|")
+        return (f'<div class="photo photo--{ratio}{dark}" role="img" aria-label="{alt}">'
+                f'<span class="photo__note"><span>{html.escape(left)}</span><span>{html.escape(right)}</span></span></div>')
+    return XTAG.sub(repl, markup)
+
+
 # ---------------------------------------------------------------- schema
 
 def schema(page: dict) -> str:
@@ -186,7 +267,7 @@ def build_site(pages: list, layout: str) -> None:
         for key in ["title", "description", "canonical", "robots", "og_type", "schema", "slug",
                     "page_type", "scripts", "root"]:
             doc = doc.replace("{{" + key + "}}", values[key])
-        doc = doc.replace("{{content}}", values["content"])
+        doc = doc.replace("{{content}}", render_photos(values["content"], root))
         doc = mark_nav(rel_links(doc, root), page.get("nav", ""))
         target = out_file(page["path"])
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -239,6 +320,7 @@ def build_preview(pages: list, layout: str) -> None:
         content = re.sub(r'(<section[^>]*?) id="([^"]+)"',
                          lambda m: f'{m.group(1)} id="{tok}-{m.group(2)}"' if seen[m.group(2)] > 1 else m.group(0),
                          page["content"])
+        content = render_photos(content, "")
         routes.append(
             f'<div data-route="{tok}" data-title="{html.escape(page["title"], quote=True)}" '
             f'data-type="{page.get("type", "page")}" data-nav="{page.get("nav", "")}"'
