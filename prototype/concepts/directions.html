@@ -1,0 +1,295 @@
+<title>Áron Site Directions</title>
+<meta name="description" content="Three bold design directions for the Áron Ritók-Filip founder website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,400..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:wght@400..700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Caveat+Brush&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #141414; color: #F2EEE6; font-family: "Archivo", system-ui, sans-serif; }
+img, svg { max-width: 100%; }
+a { color: inherit; }
+.board-nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between;
+  padding: .75rem var(--gutter); background: #141414; border-bottom: 1px solid #333;
+  font: 600 .8125rem/1.2 "Archivo", sans-serif; letter-spacing: .02em;
+}
+.board-nav nav { display: flex; gap: .4rem; flex-wrap: wrap; }
+.board-nav a { text-decoration: none; padding: .5rem .85rem; border: 1px solid #444; border-radius: 99px; }
+.board-nav a:hover { background: #F2EEE6; color: #141414; }
+.tag {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: baseline; justify-content: space-between;
+  padding: 1.25rem var(--gutter); background: #141414; border-top: 1px solid #333;
+}
+.tag b { font: 800 clamp(1.25rem, 2.4vw, 1.75rem)/1 "Archivo", sans-serif; letter-spacing: -.02em; }
+.tag span { color: #B9B3A8; font-size: .9375rem; max-width: 70ch; }
+.grain { position: relative; isolation: isolate; }
+.grain::after { content: ""; position: absolute; inset: 0; background: var(--grain); opacity: .35; mix-blend-mode: multiply; pointer-events: none; z-index: 5; }
+:focus-visible { outline: 3px solid #FF3EA5; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* =====================================================================
+   A — WHEATPASTE: street poster, fluoro pink + safety orange on paper
+   ===================================================================== */
+.a { --paper: #EFE9DC; --ink: #121212; --pink: #FF3EA5; --orange: #FF5A1F; background: var(--paper); color: var(--ink); overflow: hidden; }
+.a-hero { position: relative; padding: clamp(1.5rem, 4vw, 3rem) var(--gutter) clamp(3rem, 7vw, 6rem); min-height: 0; }
+.a-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font: 700 .8125rem/1 "Archivo", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.a-logo { font: 400 1.5rem/1 "Anton", sans-serif; letter-spacing: .01em; }
+.a-top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.a-top nav a { text-decoration: none; }
+.a-h1 {
+  position: relative; z-index: 2; margin: clamp(2rem, 6vw, 4.5rem) 0 0;
+  font: 400 clamp(4rem, 15.5vw, 15rem)/.84 "Anton", sans-serif; text-transform: uppercase; letter-spacing: -.005em;
+}
+.a-h1 .row { display: block; }
+.a-h1 .pink { color: var(--pink); }
+.a-h1 .circled { position: relative; display: inline-block; }
+.a-h1 .circled svg { position: absolute; left: -6%; top: -12%; width: 112%; height: 124%; overflow: visible; pointer-events: none; }
+.a-h1 .circled path { fill: none; stroke: var(--orange); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 2400; stroke-dashoffset: 0; animation: draw 1.4s .3s cubic-bezier(.6,0,.2,1) both; }
+@keyframes draw { from { stroke-dashoffset: 2400; } }
+.a-strip {
+  position: absolute; z-index: 3; width: clamp(7rem, 14vw, 12rem); height: 2.2rem;
+  background: rgba(255,244,200,.72); box-shadow: 0 1px 2px rgba(0,0,0,.08); transform: rotate(-8deg);
+}
+.a-sticker {
+  position: absolute; z-index: 4; right: clamp(1rem, 6vw, 6rem); top: clamp(7rem, 20vw, 15rem);
+  width: clamp(7.5rem, 14vw, 11rem); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; text-align: center;
+  background: var(--orange); color: var(--ink); transform: rotate(12deg);
+  font: 900 clamp(.9rem, 1.4vw, 1.2rem)/1.05 "Archivo", sans-serif; font-stretch: 75%; text-transform: uppercase; padding: 1rem;
+  box-shadow: 4px 6px 0 var(--ink);
+}
+.a-sub { position: relative; z-index: 2; display: grid; gap: 2rem; margin-top: clamp(2rem, 4vw, 3.5rem); }
+@media (min-width: 60rem) { .a-sub { grid-template-columns: 1.1fr .9fr; align-items: start; } .a-portrait { margin-top: -13rem; } }
+@media (max-width: 47.99rem) { .a-sticker { top: auto; bottom: 1.5rem; right: 1rem; width: 6.5rem; } .a-portrait { max-width: 17rem; justify-self: center; } }
+.a-lead { font: 500 clamp(1.125rem, 1.9vw, 1.625rem)/1.35 "Archivo", sans-serif; max-width: 30ch; }
+.a-lead mark { background: var(--pink); color: var(--ink); padding: 0 .15em; }
+.a-hand { font: 400 clamp(1.5rem, 2.6vw, 2.25rem)/1.1 "Caveat Brush", cursive; color: var(--orange); transform: rotate(-3deg); display: inline-block; }
+.a-cta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem; }
+.a-btn {
+  display: inline-flex; align-items: center; gap: .75rem; min-height: 60px; padding: 0 1.75rem;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  font: 800 1.0625rem/1 "Archivo", sans-serif; font-stretch: 85%; text-transform: uppercase; letter-spacing: .02em;
+  transform: rotate(-1.5deg); transition: transform .2s;
+}
+.a-btn:hover { transform: rotate(0) scale(1.04); background: var(--pink); color: var(--ink); }
+.a-portrait { position: relative; aspect-ratio: 4 / 5; max-width: 21rem; justify-self: end; width: 100%; transform: rotate(2.5deg); background: var(--ink); padding: .65rem .65rem 3rem; box-shadow: 8px 10px 0 rgba(0,0,0,.18); }
+.a-portrait .ht {
+  width: 100%; height: 100%;
+  background:
+    radial-gradient(circle at 50% 36%, transparent 0 17%, var(--pink) 17.5% 100%) center/100% 100%,
+    radial-gradient(circle, var(--ink) 38%, transparent 40%) 0 0/9px 9px,
+    var(--pink);
+  -webkit-mask: radial-gradient(ellipse 40% 30% at 50% 100%, #000 99%, transparent 100%), radial-gradient(circle at 50% 36%, #000 17%, transparent 17.5%);
+}
+.a-portrait .ht-bg { position: absolute; inset: .65rem .65rem 3rem; background: var(--pink); }
+.a-portrait .ht-fig { position: absolute; inset: .65rem .65rem 3rem; background: radial-gradient(circle, var(--ink) 42%, transparent 46%) 0 0/8px 8px;
+  -webkit-mask: radial-gradient(circle at 50% 38%, #000 0 18%, transparent 18.5%), radial-gradient(ellipse 42% 34% at 50% 100%, #000 0 99%, transparent 100%);
+          mask: radial-gradient(circle at 50% 38%, #000 0 18%, transparent 18.5%), radial-gradient(ellipse 42% 34% at 50% 100%, #000 0 99%, transparent 100%); }
+.a-portrait figcaption { position: absolute; left: 1rem; right: 1rem; bottom: .8rem; color: var(--paper); font: 400 1.25rem/1 "Caveat Brush", cursive; }
+.a-marquee { background: var(--pink); color: var(--ink); border-block: 3px solid var(--ink); overflow: hidden; transform: rotate(-1.2deg) scale(1.03); margin-block: .5rem 3rem; }
+.a-marquee div { display: flex; width: max-content; animation: slide 30s linear infinite; }
+.a-marquee span { padding: .9rem 1.25rem; font: 400 clamp(1.5rem, 3vw, 2.5rem)/1 "Anton", sans-serif; text-transform: uppercase; white-space: nowrap; }
+.a-marquee span:nth-child(even) { color: var(--paper); -webkit-text-stroke: 1.5px var(--ink); }
+@keyframes slide { to { transform: translateX(-50%); } }
+.a-grid { display: grid; gap: 1.25rem; padding: 0 var(--gutter) clamp(3rem, 7vw, 6rem); }
+@media (min-width: 48rem) { .a-grid { grid-template-columns: repeat(3, 1fr); } }
+.a-card { position: relative; padding: 1.75rem 1.5rem 2rem; background: #FFFDF7; border: 3px solid var(--ink); }
+.a-card:nth-child(1) { transform: rotate(-1deg); } .a-card:nth-child(2) { transform: rotate(.8deg); background: var(--orange); } .a-card:nth-child(3) { transform: rotate(-.6deg); }
+.a-card b { display: block; font: 400 clamp(1.75rem, 3vw, 2.5rem)/.95 "Anton", sans-serif; text-transform: uppercase; margin-bottom: .75rem; }
+.a-card p { margin: 0; font-size: 1rem; line-height: 1.5; }
+.a-card .num { position: absolute; top: -1.1rem; right: 1rem; background: var(--ink); color: var(--paper); font: 400 1.25rem/1 "Anton", sans-serif; padding: .45rem .65rem; }
+
+/* =====================================================================
+   B — THE GROWTH ISSUE: Florida magazine cover, flamingo + palm + sun
+   ===================================================================== */
+.b { --cream: #FBF3E4; --palm: #0E4D36; --flamingo: #FF7FA8; --sun: #FFCB2E; --ink: #1A1410; background: var(--cream); color: var(--ink); }
+.b-cover { position: relative; display: grid; min-height: 0; padding: clamp(1rem, 3vw, 2rem) var(--gutter) clamp(2.5rem, 6vw, 5rem); overflow: hidden; }
+.b-mast { display: flex; justify-content: space-between; align-items: end; gap: 1rem; border-bottom: 2px solid var(--ink); padding-bottom: .75rem; }
+.b-mast .name { font: 900 clamp(4.5rem, 16vw, 15.5rem)/.8 "Fraunces", serif; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; letter-spacing: -.045em; color: var(--palm); }
+.b-mast .issue { text-align: right; font: 600 .75rem/1.4 "Instrument Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.b-mast .issue big { display: block; font: 700 1.5rem/1 "Fraunces", serif; letter-spacing: 0; text-transform: none; font-style: italic; }
+.b-body { display: grid; gap: 2rem; margin-top: 2rem; }
+@media (min-width: 60rem) { .b-body { grid-template-columns: 1fr 1.05fr 1fr; align-items: stretch; } }
+.b-lines { display: grid; gap: 1.5rem; align-content: start; }
+.b-line small { display: block; font: 700 .75rem/1 "Instrument Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--palm); margin-bottom: .4rem; }
+.b-line p { margin: 0; font: 600 clamp(1.25rem, 1.8vw, 1.625rem)/1.12 "Fraunces", serif; font-variation-settings: "opsz" 48; }
+.b-line p em { color: #C2185B; }
+.b-line .pg { font: 700 .8125rem/1 "Instrument Sans", sans-serif; color: var(--palm); }
+.b-photo { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px 0 0; overflow: hidden; background: linear-gradient(180deg, var(--flamingo) 0%, #FFB1C8 55%, var(--sun) 100%); }
+.b-photo::before { content: ""; position: absolute; left: 50%; bottom: 0; width: 70%; height: 78%; transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 26%, var(--palm) 0 16%, transparent 16.5%), radial-gradient(ellipse 50% 42% at 50% 100%, var(--palm) 0 99%, transparent 100%); }
+.b-photo .palm { position: absolute; width: 60%; right: -12%; top: 4%; fill: var(--palm); opacity: .9; }
+.b-photo figcaption { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); background: var(--cream); padding: .35rem .8rem; border-radius: 99px; font: 600 .75rem/1 "Instrument Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.b-main h1 { margin: 0; font: 800 clamp(2.75rem, 5.6vw, 5.5rem)/.92 "Fraunces", serif; font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144; letter-spacing: -.035em; }
+.b-main h1 em { font-style: italic; font-weight: 400; color: #C2185B; }
+.b-main p { font: 400 1.125rem/1.5 "Instrument Sans", sans-serif; max-width: 34ch; margin: 1.25rem 0 1.5rem; }
+.b-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 58px; padding: 0 1.75rem; border-radius: 99px; background: var(--palm); color: var(--cream); text-decoration: none; font: 700 1rem/1 "Instrument Sans", sans-serif; transition: background-color .2s, transform .2s; }
+.b-btn:hover { background: #C2185B; transform: translateY(-2px); }
+.b-photo-wrap { position: relative; }
+.b-seal { position: absolute; left: -1.5rem; top: 1.5rem; width: clamp(6.5rem, 11vw, 9rem); aspect-ratio: 1; border-radius: 50%; background: var(--sun); display: grid; place-items: center; text-align: center; transform: rotate(-10deg);
+  font: 800 clamp(.8rem, 1.1vw, 1rem)/1.05 "Fraunces", serif; font-style: italic; padding: .8rem; box-shadow: 0 0 0 6px var(--cream), 0 0 0 8px var(--sun); z-index: 2; }
+.b-barcode { display: flex; gap: 2px; height: 42px; align-items: stretch; margin-top: 1.5rem; }
+.b-barcode i { width: 2px; background: var(--ink); } .b-barcode i:nth-child(3n) { width: 4px; } .b-barcode i:nth-child(5n) { width: 1px; }
+.b-toc { display: grid; gap: 0; padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter); background: var(--palm); color: var(--cream); }
+@media (min-width: 48rem) { .b-toc { grid-template-columns: repeat(3, 1fr); column-gap: 2rem; } }
+.b-toc h2 { grid-column: 1 / -1; margin: 0 0 1.5rem; font: 800 clamp(2.25rem, 5vw, 4rem)/.95 "Fraunces", serif; font-variation-settings: "SOFT" 80, "WONK" 1; letter-spacing: -.03em; }
+.b-toc h2 em { color: var(--sun); font-weight: 400; }
+.b-toc article { padding: 1.25rem 0; border-top: 1px solid rgba(251,243,228,.3); }
+.b-toc .n { font: 300 3.5rem/1 "Fraunces", serif; color: var(--flamingo); font-style: italic; }
+.b-toc h3 { margin: .5rem 0; font: 700 1.375rem/1.1 "Fraunces", serif; }
+.b-toc p { margin: 0; font: 400 1rem/1.5 "Instrument Sans", sans-serif; color: #D8E6DE; }
+
+/* =====================================================================
+   C — HEAT: full-bleed tomato, giant cropped type, spinning badge
+   ===================================================================== */
+.c { --tomato: #FF4127; --ink: #111; --cream: #FFF4E8; --blue: #1F3BFF; background: var(--tomato); color: var(--ink); overflow: hidden; }
+.c-hero { position: relative; padding: clamp(1.25rem, 3vw, 2rem) 0 0; }
+.c-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0 var(--gutter); font: 700 .9375rem/1 "Bricolage Grotesque", sans-serif; }
+.c-top .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -.03em; }
+.c-top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.c-top nav a { text-decoration: none; }
+.c-top nav a:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+.c-giant {
+  margin: clamp(1.5rem, 4vw, 3rem) 0 0; padding: 0 0 0 calc(var(--gutter) - .06em);
+  font: 800 clamp(5rem, 22vw, 22rem)/.78 "Bricolage Grotesque", sans-serif; font-variation-settings: "opsz" 96, "wdth" 75;
+  letter-spacing: -.035em; white-space: nowrap;
+}
+.c-giant span { display: block; }
+.c-giant .out { color: transparent; -webkit-text-stroke: 3px var(--ink); }
+.c-giant .cream { color: var(--cream); }
+.c-row { display: grid; gap: 2rem; padding: clamp(2rem, 4vw, 3rem) var(--gutter) clamp(3rem, 7vw, 6rem); }
+@media (min-width: 60rem) { .c-row { grid-template-columns: 1.3fr 1fr auto; align-items: end; } }
+.c-row p { margin: 0; font: 600 clamp(1.25rem, 2.2vw, 2rem)/1.15 "Bricolage Grotesque", sans-serif; letter-spacing: -.025em; max-width: 26ch; }
+.c-row .small { font: 500 1rem/1.5 "Bricolage Grotesque", sans-serif; letter-spacing: 0; max-width: 42ch; }
+.c-badge { position: relative; width: clamp(9rem, 15vw, 12rem); aspect-ratio: 1; display: grid; place-items: center; text-decoration: none; justify-self: end; }
+.c-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 14s linear infinite; }
+.c-badge text { font: 800 11.5px "Bricolage Grotesque", sans-serif; letter-spacing: .12em; text-transform: uppercase; fill: var(--ink); }
+.c-badge b { width: 48%; aspect-ratio: 1; border-radius: 50%; background: var(--ink); color: var(--tomato); display: grid; place-items: center; font-size: 2rem; transition: transform .3s; }
+.c-badge:hover b { transform: rotate(-45deg) scale(1.1); background: var(--blue); color: var(--cream); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.c-portrait { position: absolute; right: clamp(1rem, 8vw, 9rem); top: clamp(6rem, 13vw, 12rem); width: clamp(8rem, 20vw, 17rem); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--blue); border: 4px solid var(--ink); transform: rotate(-6deg); z-index: 2; }
+.c-portrait::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 36%, var(--cream) 0 17%, transparent 17.5%), radial-gradient(ellipse 40% 34% at 50% 100%, var(--cream) 0 99%, transparent 100%); }
+.c-portrait span { position: absolute; left: 50%; bottom: 12%; transform: translateX(-50%); background: var(--ink); color: var(--cream); font: 700 .6875rem/1 "Bricolage Grotesque", sans-serif; padding: .35rem .6rem; border-radius: 99px; white-space: nowrap; text-transform: uppercase; letter-spacing: .06em; }
+.c-facts { display: grid; grid-template-columns: 1fr; background: var(--ink); color: var(--cream); }
+@media (min-width: 48rem) { .c-facts { grid-template-columns: repeat(3, 1fr); } }
+.c-facts div { padding: clamp(2rem, 4vw, 3rem) var(--gutter); border-top: 1px solid #333; }
+@media (min-width: 48rem) { .c-facts div + div { border-left: 1px solid #333; } }
+.c-facts b { display: block; font: 800 clamp(3rem, 7vw, 6rem)/.85 "Bricolage Grotesque", sans-serif; font-variation-settings: "wdth" 75; letter-spacing: -.025em; color: var(--tomato); }
+.c-facts span { display: block; margin-top: .75rem; font: 500 1rem/1.45 "Bricolage Grotesque", sans-serif; color: #D9D2C8; max-width: 30ch; }
+.c-facts div:nth-child(2) b { color: var(--cream); }
+.c-facts div:nth-child(3) b { color: #8FA0FF; }
+</style>
+
+<header class="board-nav">
+  <strong>Áron · 3 design directions</strong>
+  <nav aria-label="Directions"><a href="#a">A · Wheatpaste</a><a href="#b">B · The Growth Issue</a><a href="#c">C · Heat</a></nav>
+</header>
+
+<!-- ============================ A ============================ -->
+<div class="tag" id="a"><b>A · Wheatpaste</b><span>Street poster pasted on a Fort Myers wall. Loud condensed type, fluoro pink and safety orange, marker circles, tape and stickers. Raw and human.</span></div>
+<section class="a grain" aria-label="Direction A">
+  <div class="a-hero">
+    <div class="a-top">
+      <span class="a-logo">Áron Ritók-Filip</span>
+      <nav><a href="#a">Work</a><a href="#a">Services</a><a href="#a">About</a><a href="#a">Call me</a></nav>
+    </div>
+    <span class="a-strip" style="left:8%;top:5.5rem" aria-hidden="true"></span>
+    <span class="a-strip" style="right:24%;top:9rem;transform:rotate(6deg)" aria-hidden="true"></span>
+    <div class="a-sticker" aria-hidden="true">Straight from Fort&nbsp;Myers</div>
+    <h1 class="a-h1">
+      <span class="row">Nice website.</span>
+      <span class="row">Where are</span>
+      <span class="row"><span class="circled">the calls?<svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M40 120 C 20 40, 260 8, 420 18 C 560 28, 610 90, 560 150 C 500 205, 200 205, 90 170 C 30 150, 18 105, 60 70"/></svg></span></span>
+    </h1>
+    <div class="a-sub">
+      <div>
+        <p class="a-lead">I build <mark>digital growth systems</mark> that make Southwest Florida phones ring. Website, search, follow-up, measured in booked jobs.</p>
+        <div class="a-cta">
+          <a class="a-btn" href="#a">Book a strategy call →</a>
+          <span class="a-hand">30 min. no pitch deck.</span>
+        </div>
+      </div>
+      <figure class="a-portrait" style="margin:0">
+        <div class="ht-bg"></div><div class="ht-fig"></div>
+        <figcaption>Áron, founder of HelloProVision (photo shoot pending)</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="a-marquee" aria-hidden="true"><div>
+    <span>More calls</span><span>Fort Myers</span><span>Less guesswork</span><span>Naples</span><span>One partner</span><span>Cape Coral</span>
+    <span>More calls</span><span>Fort Myers</span><span>Less guesswork</span><span>Naples</span><span>One partner</span><span>Cape Coral</span>
+  </div></div>
+  <div class="a-grid">
+    <article class="a-card"><span class="num">01</span><b>Traffic, no calls</b><p>People visit, look around and leave. The site says who you are, not why you, why now.</p></article>
+    <article class="a-card"><span class="num">02</span><b>Invisible on the map</b><p>Competitors own the map pack for the searches your best customers actually make.</p></article>
+    <article class="a-card"><span class="num">03</span><b>Renting your leads</b><p>Marketplaces fill the gap, at a price that climbs every season.</p></article>
+  </div>
+</section>
+
+<!-- ============================ B ============================ -->
+<div class="tag" id="b"><b>B · The Growth Issue</b><span>The site as a Florida lifestyle magazine cover. Soft, characterful serif, flamingo pink, palm green and sun yellow. Warm, confident, unexpected for a marketing consultant.</span></div>
+<section class="b grain" aria-label="Direction B">
+  <div class="b-cover">
+    <div class="b-mast">
+      <span class="name">Áron</span>
+      <span class="issue">Southwest Florida<br>Fall 2026<big>The Growth Issue</big></span>
+    </div>
+    <div class="b-body">
+      <div class="b-lines">
+        <div class="b-line"><small>Websites</small><p>Traffic but no calls? <em>Five fixes</em> for this month</p><span class="pg">p. 12</span></div>
+        <div class="b-line"><small>Local SEO</small><p>Map-pack math for Fort Myers, Naples &amp; Cape Coral</p><span class="pg">p. 24</span></div>
+        <div class="b-line"><small>Honesty</small><p>No ranking guarantees. <em>Real numbers.</em></p><span class="pg">p. 31</span></div>
+      </div>
+      <div class="b-photo-wrap">
+      <div class="b-seal" aria-hidden="true">Free 30-min strategy call inside</div>
+      <figure class="b-photo" style="margin:0">
+        <svg class="palm" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 100 C 60 40, 20 40, 0 60 C 40 50, 70 70, 100 100 Z M100 100 C 90 40, 110 10, 150 0 C 120 30, 110 60, 100 100 Z M100 100 C 150 50, 190 60, 200 90 C 170 70, 140 80, 100 100 Z M100 100 C 160 110, 180 150, 170 190 C 160 150, 130 120, 100 100 Z M100 100 C 50 110, 20 150, 30 190 C 45 150, 70 120, 100 100 Z"/></svg>
+        <figcaption>Cover photo · shoot pending</figcaption>
+      </figure>
+      </div>
+      <div class="b-main">
+        <h1>The owner’s guide to <em>predictable</em> growth.</h1>
+        <p>Áron Ritók-Filip builds digital growth systems for Southwest Florida service businesses. Strategy, websites and local search that make the phone ring.</p>
+        <a class="b-btn" href="#b">Book a strategy call →</a>
+        <div class="b-barcode" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="b-toc">
+    <h2>Inside this <em>issue</em></h2>
+    <article><span class="n">01</span><h3>Research</h3><p>Your market, competitors and how Florida customers search, compare and decide.</p></article>
+    <article><span class="n">02</span><h3>Strategy &amp; system</h3><p>Positioning, website, local search and tracking, built to work together.</p></article>
+    <article><span class="n">03</span><h3>Growth</h3><p>Measure qualified opportunities, learn, improve. Every month.</p></article>
+  </div>
+</section>
+
+<!-- ============================ C ============================ -->
+<div class="tag" id="c"><b>C · Heat</b><span>Full-bleed tomato red like Florida at 2 pm. Giant cropped headline running off the edge, a spinning call-to-action badge, hard contrast. The boldest of the three.</span></div>
+<section class="c grain" aria-label="Direction C">
+  <div class="c-hero">
+    <div class="c-top">
+      <span class="logo">Áron Ritók-Filip</span>
+      <nav><a href="#c">Work</a><a href="#c">Services</a><a href="#c">About</a><a href="#c">Insights</a></nav>
+    </div>
+    <div class="c-portrait" aria-hidden="true"><span>Áron · photo pending</span></div>
+    <h1 class="c-giant"><span>More calls.</span><span class="out">Less guess&shy;work.</span><span class="cream">Florida.</span></h1>
+    <div class="c-row">
+      <p>Building digital growth systems for Florida businesses.</p>
+      <p class="small">Strategy, websites and local SEO for owners in Fort Myers, Naples and Cape Coral who want predictable, qualified opportunities.</p>
+      <a class="c-badge" href="#c" aria-label="Book a strategy call">
+        <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circ">Book a strategy call · Book a strategy call · </textPath></text></svg>
+        <b aria-hidden="true">↗</b>
+      </a>
+    </div>
+  </div>
+  <div class="c-facts">
+    <div><b>30 min</b><span>Strategy call. You leave with at least one useful insight, whether we work together or not.</span></div>
+    <div><b>1 partner</b><span>Instead of five vendors. I stay accountable; my team at HelloProVision builds.</span></div>
+    <div><b>0</b><span>Ranking guarantees. Anyone who promises them is guessing. You get real numbers instead.</span></div>
+  </div>
+</section>
