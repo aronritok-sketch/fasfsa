@@ -13,6 +13,7 @@ Source
   prototype/src/pages/*.html  page content, with a front-matter comment at the top
   prototype/src/assets/       css, js, fonts
 """
+import base64
 import html
 import json
 import re
@@ -338,6 +339,30 @@ def build_preview(pages: list, layout: str) -> None:
         f"<script>\n{ROUTER}\n{js}\n</script>\n"
     )
     (DIST / "preview.html").write_text(out, encoding="utf-8")
+    build_standalone(body, js)
+
+
+def data_uri(path: Path) -> str:
+    mime = {".woff2": "font/woff2", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",
+            ".webp": "image/webp", ".avif": "image/avif"}[path.suffix.lower()]
+    return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode("ascii")
+
+
+def build_standalone(body: str, js: str) -> None:
+    """One self-contained HTML file: fonts and images embedded, works offline from disk."""
+    css = (SRC / "assets/css/main.css").read_text(encoding="utf-8")
+    css = re.sub(r'url\("\.\./fonts/([^"]+)"\)', lambda m: f'url("{data_uri(SRC / "assets/fonts" / m.group(1))}")', css)
+    body = re.sub(r'src="(assets/img/[^"]+)"', lambda m: f'src="{data_uri(SRC / m.group(1))}"', body)
+    out = (
+        '<!doctype html>\n<html lang="en-US">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+        "<title>Áron Ritók-Filip — Digital Growth Strategist</title>\n"
+        '<meta name="description" content="Prototype of the Áron Ritók-Filip founder website (all pages in one file).">\n'
+        '<meta name="robots" content="noindex">\n'
+        f"<style>\n{css}\n</style>\n</head>\n<body>\n{body}\n"
+        f"<script>\n{ROUTER}\n{js}\n</script>\n</body>\n</html>\n"
+    )
+    (DIST / "aron-ritok-filip-site.html").write_text(out, encoding="utf-8")
 
 
 def main() -> None:
@@ -345,7 +370,7 @@ def main() -> None:
     pages = load_pages()
     build_site(pages, layout)
     build_preview(pages, layout)
-    print(f"Built {len(pages)} pages -> {DIST.relative_to(HERE.parent)}/ (+ preview.html)")
+    print(f"Built {len(pages)} pages -> {DIST.relative_to(HERE.parent)}/ (+ preview.html, aron-ritok-filip-site.html)")
     for p in pages:
         print(f"  {p['path']:<42} {p['source']}")
 
