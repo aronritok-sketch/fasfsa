@@ -1,0 +1,214 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"useRootPaddingAwareAlignments": false,
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"gradients": [],
+			"duotone": [],
+			"palette": [
+				{
+					"slug": "paper",
+					"name": "Paper",
+					"color": "#EFE9DC"
+				},
+				{
+					"slug": "paper-light",
+					"name": "Paper light",
+					"color": "#F8F4EA"
+				},
+				{
+					"slug": "card",
+					"name": "Card",
+					"color": "#FFFDF7"
+				},
+				{
+					"slug": "kraft",
+					"name": "Kraft",
+					"color": "#D9C9A8"
+				},
+				{
+					"slug": "ink",
+					"name": "Ink",
+					"color": "#121212"
+				},
+				{
+					"slug": "muted",
+					"name": "Muted",
+					"color": "#57524A"
+				},
+				{
+					"slug": "pink",
+					"name": "Fluoro pink (surfaces only)",
+					"color": "#FF3EA5"
+				},
+				{
+					"slug": "orange",
+					"name": "Safety orange (surfaces only)",
+					"color": "#FF5A1F"
+				},
+				{
+					"slug": "rust",
+					"name": "Rust (text on paper)",
+					"color": "#B8340A"
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"dropCap": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"writingMode": false,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"slug": "poster",
+					"name": "Anton (posters)",
+					"fontFamily": "Anton, Impact, 'Arial Narrow Bold', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Anton",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/anton-latin-400-normal.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "sans",
+					"name": "Archivo (text)",
+					"fontFamily": "Archivo, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Archivo",
+							"fontWeight": "100 900",
+							"fontStretch": "62% 125%",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/archivo-latin-standard-normal.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "hand",
+					"name": "Caveat Brush (hand notes)",
+					"fontFamily": "'Caveat Brush', 'Marker Felt', cursive",
+					"fontFace": [
+						{
+							"fontFamily": "Caveat Brush",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/caveat-brush-latin-400-normal.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "small",
+					"name": "Small",
+					"size": "0.9375rem"
+				},
+				{
+					"slug": "body",
+					"name": "Body",
+					"size": "1.0625rem"
+				},
+				{
+					"slug": "lead",
+					"name": "Lead",
+					"size": "clamp(1.125rem, 1.7vw, 1.5rem)"
+				},
+				{
+					"slug": "h3",
+					"name": "Card title",
+					"size": "clamp(1.625rem, 2.6vw, 2.25rem)"
+				},
+				{
+					"slug": "h2",
+					"name": "Section title",
+					"size": "clamp(2.5rem, 5.6vw, 5.25rem)"
+				},
+				{
+					"slug": "display",
+					"name": "Poster",
+					"size": "clamp(3.25rem, 10vw, 10rem)"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": null,
+			"margin": false,
+			"padding": false,
+			"units": [
+				"px",
+				"rem",
+				"%"
+			]
+		},
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": []
+		},
+		"layout": {
+			"allowEditing": false
+		},
+		"blocks": {
+			"core/button": {
+				"color": {
+					"background": false,
+					"text": false
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"background": false,
+					"text": false
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--paper)",
+			"text": "var(--wp--preset--color--ink)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--sans)",
+			"fontSize": "var(--wp--preset--font-size--body)",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "inherit"
+				}
+			}
+		}
+	}
+}

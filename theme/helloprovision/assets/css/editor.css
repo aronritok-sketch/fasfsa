@@ -1,0 +1,29 @@
+/* Block editor adjustments. main.css is loaded too (scoped by WordPress). */
+
+/* No page-level overlays or entrance animations while editing. */
+body::after { display: none !important; }
+.reveal-run, .circled::after, .scribble::after, .ticker__track { animation: none !important; }
+.circled::after, .scribble::after { clip-path: none !important; }
+
+/* Hidden-by-default parts of interactive blocks stay hidden in previews. */
+.hpv-ssr [hidden] { display: none !important; }
+.hpv-ssr { pointer-events: none; }
+
+/* Fact-to-verify marks are always visible to editors. */
+.tbd { background: rgba(255,90,31,.14); outline: 2px dashed #B8340A; outline-offset: -1px; padding: 0 .2em; }
+
+/* Editing affordances: keep rotated cards easy to click. */
+.block-editor-block-list__block.is-selected .block, .block-editor-block-list__block.is-selected .service-card { transform: none; }
+.hpv-media { display: flex; gap: .5rem; align-items: center; margin-bottom: 1rem; }
+
+/* RichText keeps whitespace (pre-wrap); the space between block-level headline rows would add an empty line. */
+.wp-block-heading:has(> .row) { white-space: normal !important; } /* RichText sets pre-wrap inline */
+
+/* The page title field is admin data here, the visible H1 lives in the hero block. */
+.editor-post-title.wp-block-post-title { font: 700 1rem/1.3 var(--f-sans); letter-spacing: .02em; text-transform: none; color: var(--k-muted, #57524A); margin: 0; padding: 1.25rem var(--gutter, 1.5rem) .75rem; border-bottom: 1px dashed rgba(18,18,18,.25); }
+
+/* The editor makes every block position:relative; keep the design's absolutely placed badges. */
+.block-editor-block-list__block:is(.sticker, .block__num) { position: absolute !important; }
+
+/* Whole-card link overlays would swallow clicks meant for the text inside the card. */
+.work-item a::after, .case-card .arrow-link::after, .insight-card__title a::after, .service-card .arrow-link::after { display: none; }

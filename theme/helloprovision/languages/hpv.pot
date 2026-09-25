@@ -1,0 +1,1549 @@
+# Copyright (C) 2026 HelloProVision
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HelloProVision Founder 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/helloprovision\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-25T09:26:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: hpv\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "HelloProVision Founder"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://helloprovision.com/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Founder brand theme for Áron Ritók-Filip, Digital Growth Strategist. Street-poster design (\"Wheatpaste\"), block patterns for every section, case studies, insights, a working Growth Scorecard, a strategy-call funnel and a built-in lead manager. Needs no plugins."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+#: inc/blocks.php:114
+msgid "HelloProVision"
+msgstr ""
+
+#: archive.php:20
+#: inc/blocks.php:450
+#: inc/blocks.php:569
+#: inc/blocks.php:573
+#: inc/helpers.php:159
+#: inc/helpers.php:169
+msgid "Insights"
+msgstr ""
+
+#: archive.php:20
+#: index.php:15
+msgid "Archive"
+msgstr ""
+
+#: archive.php:26
+msgid "Related service:"
+msgstr ""
+
+#: footer.php:25
+#: inc/blocks.php:369
+#: inc/helpers.php:156
+msgid "Services"
+msgstr ""
+
+#: footer.php:29
+msgid "Explore"
+msgstr ""
+
+#: footer.php:33
+msgid "Contact"
+msgstr ""
+
+#: footer.php:40
+msgid "Serving Southwest Florida"
+msgstr ""
+
+#: footer.php:53
+msgid "Founder, HelloProVision"
+msgstr ""
+
+#: footer.php:60
+msgid "Editor notes"
+msgstr ""
+
+#: footer.php:61
+msgid "Editor view"
+msgstr ""
+
+#: footer.php:61
+msgid "facts to verify"
+msgstr ""
+
+#: footer.php:62
+msgid "Hide marks"
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:27
+msgid "Main"
+msgstr ""
+
+#: header.php:31
+msgid "Local time in Fort Myers"
+msgstr ""
+
+#: header.php:32
+msgid "Book a call"
+msgstr ""
+
+#: header.php:33
+msgid "Call me"
+msgstr ""
+
+#: header.php:34
+#: header.php:39
+msgid "Menu"
+msgstr ""
+
+#: header.php:42
+msgid "Close"
+msgstr ""
+
+#: header.php:46
+#: inc/helpers.php:170
+#: assets/js/editor/blocks.js:182
+msgid "Growth Scorecard"
+msgstr ""
+
+#: header.php:49
+#: template-parts/scorecard.php:74
+msgid "Book a strategy call"
+msgstr ""
+
+#: header.php:50
+msgid "Based in Southwest Florida"
+msgstr ""
+
+#: inc/blocks.php:123
+msgid "HelloProVision: sections"
+msgstr ""
+
+#: inc/blocks.php:124
+msgid "HelloProVision: full pages"
+msgstr ""
+
+#: inc/blocks.php:144
+msgid "All"
+msgstr ""
+
+#: inc/blocks.php:223
+msgid "Photo coming soon"
+msgstr ""
+
+#. translators: %s: project name
+#: inc/blocks.php:239
+#, php-format
+msgid "%s — project by HelloProVision"
+msgstr ""
+
+#: inc/blocks.php:287
+msgid "Read the case study"
+msgstr ""
+
+#: inc/blocks.php:330
+msgid "Results write-up in preparation"
+msgstr ""
+
+#: inc/blocks.php:331
+msgid "Case study coming soon"
+msgstr ""
+
+#: inc/blocks.php:336
+msgid "Case studies are being written up. Book a call and I’ll walk you through recent work."
+msgstr ""
+
+#: inc/blocks.php:343
+msgid "Filter by industry"
+msgstr ""
+
+#: inc/blocks.php:344
+msgid "All work"
+msgstr ""
+
+#: inc/blocks.php:353
+msgid "No case studies in this industry yet."
+msgstr ""
+
+#: inc/blocks.php:366
+#: assets/js/editor/blocks.js:261
+msgid "Client"
+msgstr ""
+
+#: inc/blocks.php:367
+#: inc/lead-admin.php:400
+#: inc/post-types.php:54
+#: template-parts/strategy-call-form.php:59
+msgid "Industry"
+msgstr ""
+
+#: inc/blocks.php:368
+#: assets/js/editor/blocks.js:262
+msgid "Location"
+msgstr ""
+
+#: inc/blocks.php:370
+#: assets/js/editor/blocks.js:264
+msgid "Timeline"
+msgstr ""
+
+#: inc/blocks.php:371
+#: inc/lead-admin.php:399
+#: inc/lead-admin.php:490
+msgid "Website"
+msgstr ""
+
+#: inc/blocks.php:373
+msgid "Project snapshot"
+msgstr ""
+
+#: inc/blocks.php:397
+msgid "Headline result"
+msgstr ""
+
+#: inc/blocks.php:399
+msgid "what, and in what timeframe"
+msgstr ""
+
+#: inc/blocks.php:400
+msgid "Source:"
+msgstr ""
+
+#: inc/blocks.php:432
+#: inc/helpers.php:163
+msgid "Website Design & Development"
+msgstr ""
+
+#: inc/blocks.php:433
+#: inc/helpers.php:164
+msgid "Local SEO"
+msgstr ""
+
+#: inc/blocks.php:434
+#: inc/helpers.php:162
+msgid "Digital Growth Strategy"
+msgstr ""
+
+#. translators: %d: minutes
+#: inc/blocks.php:453
+#: single.php:23
+#, php-format
+msgid "%d min read"
+msgstr ""
+
+#: inc/blocks.php:456
+#: inc/post-types.php:27
+#: single-case_study.php:15
+msgid "Case study"
+msgstr ""
+
+#: inc/blocks.php:456
+#: inc/demo-import.php:444
+msgid "Page"
+msgstr ""
+
+#: inc/blocks.php:530
+msgid "In writing"
+msgstr ""
+
+#: inc/blocks.php:555
+msgid "Home"
+msgstr ""
+
+#: inc/blocks.php:564
+#: inc/blocks.php:567
+#: inc/helpers.php:157
+#: inc/helpers.php:167
+msgid "Case Studies"
+msgstr ""
+
+#: inc/blocks.php:601
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/demo-import.php:344
+msgid "Pages, menus and sample content imported"
+msgstr ""
+
+#: inc/demo-import.php:344
+msgid "Use the button below."
+msgstr ""
+
+#: inc/demo-import.php:345
+msgid "Booking link set"
+msgstr ""
+
+#: inc/demo-import.php:345
+msgid "Cal.com / Calendly / Google Calendar URL for the strategy call."
+msgstr ""
+
+#: inc/demo-import.php:346
+msgid "Phone and email set (NAP)"
+msgstr ""
+
+#: inc/demo-import.php:346
+msgid "Must match the Google Business Profile exactly."
+msgstr ""
+
+#: inc/demo-import.php:347
+msgid "Legal business name set"
+msgstr ""
+
+#: inc/demo-import.php:347
+msgid "Shown in the footer and legal pages."
+msgstr ""
+
+#: inc/demo-import.php:348
+msgid "Analytics connected"
+msgstr ""
+
+#: inc/demo-import.php:348
+msgid "GA4 measurement ID or GTM container."
+msgstr ""
+
+#: inc/demo-import.php:349
+msgid "Real photos added"
+msgstr ""
+
+#: inc/demo-import.php:349
+msgid "Upload photos in the editor (Photo block → Replace) or drop files into assets/img/people and assets/img/projects."
+msgstr ""
+
+#: inc/demo-import.php:350
+msgid "No “fact to verify” marks left"
+msgstr ""
+
+#. translators: %d: number of pages
+#: inc/demo-import.php:350
+#, php-format
+msgid "%d page still has placeholders (listed below)."
+msgid_plural "%d pages still have placeholders (listed below)."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of pages
+#: inc/demo-import.php:351
+msgid "Pretty permalinks on"
+msgstr ""
+
+#: inc/demo-import.php:352
+msgid "Environment is production"
+msgstr ""
+
+#. translators: %s: environment type
+#: inc/demo-import.php:352
+#, php-format
+msgid "Currently “%s”. Non-production sites are noindexed automatically."
+msgstr ""
+
+#. translators: %s: environment type
+#: inc/demo-import.php:353
+msgid "Search engines allowed"
+msgstr ""
+
+#. translators: %s: environment type
+#: inc/demo-import.php:353
+msgid "Settings → Reading → Search engine visibility."
+msgstr ""
+
+#: inc/demo-import.php:354
+msgid "Test lead received"
+msgstr ""
+
+#: inc/demo-import.php:354
+msgid "Submit the strategy call form once and check the Leads screen and your inbox."
+msgstr ""
+
+#: inc/demo-import.php:372
+#: inc/demo-import.php:400
+msgid "HelloProVision setup"
+msgstr ""
+
+#: inc/demo-import.php:381
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: inc/demo-import.php:404
+msgid "Import finished."
+msgstr ""
+
+#: inc/demo-import.php:404
+msgid "View the site"
+msgstr ""
+
+#: inc/demo-import.php:410
+msgid "1. Import the site"
+msgstr ""
+
+#: inc/demo-import.php:411
+msgid "Creates every page of the approved design (home, services, about, case studies, insights, strategy call, scorecard, legal), the menus, one case study and one article, and sets the front page and permalinks."
+msgstr ""
+
+#: inc/demo-import.php:412
+msgid "Pages that already exist are kept as they are unless you tick the box."
+msgstr ""
+
+#: inc/demo-import.php:416
+msgid "Overwrite existing pages, menus and site title (resets your edits)"
+msgstr ""
+
+#: inc/demo-import.php:417
+msgid "Import again"
+msgstr ""
+
+#: inc/demo-import.php:417
+msgid "Import pages & menus"
+msgstr ""
+
+#: inc/demo-import.php:419
+msgid "WP-CLI: wp hpv import-demo [--force]"
+msgstr ""
+
+#: inc/demo-import.php:423
+msgid "2. Launch checklist"
+msgstr ""
+
+#: inc/demo-import.php:430
+msgid "Fix"
+msgstr ""
+
+#: inc/demo-import.php:441
+msgid "Facts to verify before launch"
+msgstr ""
+
+#: inc/demo-import.php:442
+msgid "Pink-outlined placeholders (numbers, client names, testimonials) are visible only to logged-in editors. Replace each one with a verified fact or delete it."
+msgstr ""
+
+#: inc/demo-import.php:444
+msgid "Placeholders"
+msgstr ""
+
+#: inc/demo-import.php:478
+msgid "HelloProVision theme is active."
+msgstr ""
+
+#: inc/demo-import.php:479
+msgid "Import the pages and menus of the approved design in one click."
+msgstr ""
+
+#: inc/demo-import.php:481
+msgid "Open setup"
+msgstr ""
+
+#: inc/helpers.php:158
+#: inc/helpers.php:168
+msgid "About"
+msgstr ""
+
+#: inc/helpers.php:173
+msgid "Privacy Policy"
+msgstr ""
+
+#: inc/helpers.php:174
+msgid "Terms"
+msgstr ""
+
+#: inc/helpers.php:175
+msgid "Accessibility"
+msgstr ""
+
+#: inc/lead-admin.php:125
+#: inc/post-types.php:69
+#: inc/post-types.php:70
+msgid "Lead"
+msgstr ""
+
+#: inc/lead-admin.php:126
+#: inc/lead-admin.php:457
+#: inc/post-types.php:94
+msgid "Stage"
+msgstr ""
+
+#: inc/lead-admin.php:127
+msgid "Source"
+msgstr ""
+
+#: inc/lead-admin.php:128
+msgid "Business"
+msgstr ""
+
+#: inc/lead-admin.php:129
+msgid "Score"
+msgstr ""
+
+#: inc/lead-admin.php:130
+msgid "Received"
+msgstr ""
+
+#: inc/lead-admin.php:131
+msgid "Follow up"
+msgstr ""
+
+#: inc/lead-admin.php:148
+#: inc/lead-admin.php:247
+#: assets/js/editor/blocks.js:244
+msgid "Strategy call"
+msgstr ""
+
+#: inc/lead-admin.php:148
+#: inc/lead-admin.php:248
+#: inc/lead-admin.php:371
+#: assets/js/editor/blocks.js:244
+msgid "Scorecard"
+msgstr ""
+
+#. translators: %s: time ago
+#: inc/lead-admin.php:166
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: inc/lead-admin.php:168
+msgid "Reply overdue"
+msgstr ""
+
+#: inc/lead-admin.php:246
+msgid "All sources"
+msgstr ""
+
+#: inc/lead-admin.php:253
+msgid "Export CSV"
+msgstr ""
+
+#. translators: %s: stage
+#: inc/lead-admin.php:313
+#, php-format
+msgid "Move to: %s"
+msgstr ""
+
+#: inc/lead-admin.php:352
+#: inc/lead-admin.php:397
+#: template-parts/scorecard.php:28
+#: template-parts/strategy-call-form.php:44
+msgid "Email"
+msgstr ""
+
+#: inc/lead-admin.php:355
+msgid "Call"
+msgstr ""
+
+#: inc/lead-admin.php:370
+msgid "Contact & request"
+msgstr ""
+
+#: inc/lead-admin.php:372
+msgid "Notes & activity"
+msgstr ""
+
+#: inc/lead-admin.php:373
+msgid "Pipeline"
+msgstr ""
+
+#: inc/lead-admin.php:396
+#: template-parts/scorecard.php:27
+#: template-parts/strategy-call-form.php:43
+msgid "Name"
+msgstr ""
+
+#: inc/lead-admin.php:398
+#: inc/settings.php:39
+#: template-parts/strategy-call-form.php:47
+msgid "Phone"
+msgstr ""
+
+#: inc/lead-admin.php:401
+#: template-parts/strategy-call-form.php:60
+msgid "City"
+msgstr ""
+
+#: inc/lead-admin.php:402
+msgid "Challenge"
+msgstr ""
+
+#: inc/lead-admin.php:403
+msgid "Budget"
+msgstr ""
+
+#: inc/lead-admin.php:404
+#: template-parts/strategy-call-form.php:70
+msgid "Timing"
+msgstr ""
+
+#: inc/lead-admin.php:405
+msgid "Came from"
+msgstr ""
+
+#: inc/lead-admin.php:409
+msgid "Campaign"
+msgstr ""
+
+#: inc/lead-admin.php:412
+msgid "This lead is waiting longer than your reply promise."
+msgstr ""
+
+#: inc/lead-admin.php:432
+msgid "This lead hasn’t taken the scorecard."
+msgstr ""
+
+#. translators: %d: score
+#: inc/lead-admin.php:437
+#, php-format
+msgid "Overall: %d/100"
+msgstr ""
+
+#. translators: %s: area
+#: inc/lead-admin.php:444
+#, php-format
+msgid "Talking point for the call: %s"
+msgstr ""
+
+#: inc/lead-admin.php:463
+msgid "Deal value (USD)"
+msgstr ""
+
+#: inc/lead-admin.php:465
+msgid "Next follow-up"
+msgstr ""
+
+#: inc/lead-admin.php:467
+msgid "If lost: why?"
+msgstr ""
+
+#: inc/lead-admin.php:469
+msgid "Moving a lead to Qualified or Won is reported to GA4 when the Measurement Protocol secret is set."
+msgstr ""
+
+#: inc/lead-admin.php:480
+msgid "Add a note"
+msgstr ""
+
+#: inc/lead-admin.php:481
+msgid "Add a note: call summary, next step, objections…"
+msgstr ""
+
+#: inc/lead-admin.php:482
+msgid "Save note"
+msgstr ""
+
+#. translators: %s: date
+#: inc/lead-admin.php:525
+#, php-format
+msgid "Follow-up set for %s"
+msgstr ""
+
+#: inc/lead-admin.php:547
+msgid "Not allowed."
+msgstr ""
+
+#: inc/lead-admin.php:583
+msgid "Leads pipeline"
+msgstr ""
+
+#: inc/lead-admin.php:601
+msgid "No leads yet. They appear here when someone books a call or completes the scorecard."
+msgstr ""
+
+#: inc/lead-admin.php:611
+msgid "overdue"
+msgstr ""
+
+#: inc/lead-admin.php:614
+msgid "Open lead manager"
+msgstr ""
+
+#: inc/lead-admin.php:627
+#: inc/lead-admin.php:638
+#: inc/post-types.php:68
+msgid "Leads"
+msgstr ""
+
+#: inc/lead-admin.php:666
+msgid "Inquiries"
+msgstr ""
+
+#: inc/leads.php:41
+msgid "New"
+msgstr ""
+
+#: inc/leads.php:42
+msgid "Contacted"
+msgstr ""
+
+#: inc/leads.php:43
+msgid "Qualified"
+msgstr ""
+
+#: inc/leads.php:44
+msgid "Call booked"
+msgstr ""
+
+#: inc/leads.php:45
+msgid "Proposal sent"
+msgstr ""
+
+#: inc/leads.php:46
+msgid "Won"
+msgstr ""
+
+#: inc/leads.php:47
+msgid "Lost / not a fit"
+msgstr ""
+
+#: inc/leads.php:155
+msgid "Something looked automated. Please try again."
+msgstr ""
+
+#: inc/leads.php:159
+msgid "That was quick. Please take a second and try again."
+msgstr ""
+
+#: inc/leads.php:164
+msgid "Too many submissions from your connection. Please email or call instead."
+msgstr ""
+
+#: inc/leads.php:219
+msgid "Please add your name, a valid email and a phone number."
+msgstr ""
+
+#. translators: 1: challenge, 2: timing
+#: inc/leads.php:241
+#, php-format
+msgid "Requested a strategy call. Challenge: %1$s. Timing: %2$s."
+msgstr ""
+
+#: inc/leads.php:269
+msgid "Please add your name and a valid email."
+msgstr ""
+
+#. translators: 1: score, 2: area
+#: inc/leads.php:299
+#, php-format
+msgid "Completed the Growth Scorecard: %1$d/100, weakest area %2$s."
+msgstr ""
+
+#. translators: 1: old stage, 2: new stage
+#: inc/leads.php:426
+#, php-format
+msgid "Stage: %1$s → %2$s"
+msgstr ""
+
+#: inc/leads.php:505
+msgid "Open in the lead manager:"
+msgstr ""
+
+#. translators: %s: reply window in hours
+#: inc/leads.php:507
+#, php-format
+msgid "Promise: a personal reply within %s business hour(s)."
+msgstr ""
+
+#. translators: %s: name
+#: inc/leads.php:511
+#, php-format
+msgid "New strategy call request: %s"
+msgstr ""
+
+#. translators: 1: name, 2: score
+#: inc/leads.php:513
+#, php-format
+msgid "Scorecard completed: %1$s (%2$s/100)"
+msgstr ""
+
+#: inc/leads.php:531
+msgid "Your strategy call request"
+msgstr ""
+
+#. translators: %s: first name
+#: inc/leads.php:533
+#: inc/leads.php:546
+#, php-format
+msgid "Hi %s,"
+msgstr ""
+
+#: inc/leads.php:534
+msgid "Thanks for reaching out. Before we talk I’ll look at your website and your search visibility, so we can spend the 30 minutes on what matters."
+msgstr ""
+
+#: inc/leads.php:536
+msgid "If you haven’t picked a time yet:"
+msgstr ""
+
+#. translators: %s: hours
+#: inc/leads.php:539
+#, php-format
+msgid "You’ll hear from me personally within %s business hour(s). Just reply to this email if anything changes."
+msgstr ""
+
+#: inc/leads.php:544
+msgid "Your Digital Growth Scorecard results"
+msgstr ""
+
+#. translators: %s: score
+#: inc/leads.php:548
+#, php-format
+msgid "Your overall score: %s/100"
+msgstr ""
+
+#. translators: %s: area
+#: inc/leads.php:554
+#, php-format
+msgid "Your #1 priority: %s"
+msgstr ""
+
+#: inc/leads.php:555
+msgid "Three steps for this month:"
+msgstr ""
+
+#: inc/leads.php:560
+msgid "Want me to review your results with you? Book a 30-minute call:"
+msgstr ""
+
+#: inc/leads.php:565
+msgid "Confirmation email sent."
+msgstr ""
+
+#: inc/leads.php:565
+msgid "Confirmation email could not be sent (check the site’s mail setup)."
+msgstr ""
+
+#: inc/post-types.php:26
+#: assets/js/editor/blocks.js:127
+msgid "Case studies"
+msgstr ""
+
+#: inc/post-types.php:28
+msgid "Add case study"
+msgstr ""
+
+#: inc/post-types.php:29
+msgid "Edit case study"
+msgstr ""
+
+#: inc/post-types.php:30
+msgid "All case studies"
+msgstr ""
+
+#: inc/post-types.php:31
+msgid "View case study"
+msgstr ""
+
+#: inc/post-types.php:32
+msgid "Search case studies"
+msgstr ""
+
+#: inc/post-types.php:33
+msgid "No case studies yet."
+msgstr ""
+
+#: inc/post-types.php:34
+msgid "Project screenshot (hero)"
+msgstr ""
+
+#: inc/post-types.php:35
+msgid "Set project screenshot"
+msgstr ""
+
+#: inc/post-types.php:53
+msgid "Industries"
+msgstr ""
+
+#: inc/post-types.php:71
+msgid "All leads"
+msgstr ""
+
+#: inc/post-types.php:72
+msgid "Search leads"
+msgstr ""
+
+#: inc/post-types.php:73
+msgid "No leads yet. They appear here as soon as someone books a call or completes the scorecard."
+msgstr ""
+
+#: inc/post-types.php:93
+msgid "Pipeline stages"
+msgstr ""
+
+#. translators: %s: site name
+#: inc/seo.php:47
+#, php-format
+msgid "Case Studies — Digital Growth Results | %s"
+msgstr ""
+
+#. translators: 1: topic, 2: site name
+#: inc/seo.php:51
+#, php-format
+msgid "%1$s — Insights for Florida Business Owners | %2$s"
+msgstr ""
+
+#: inc/seo.php:82
+msgid "Real projects, real numbers: websites, local SEO and growth strategy for service and hospitality businesses."
+msgstr ""
+
+#: inc/settings.php:21
+msgid "HelloProVision site"
+msgstr ""
+
+#: inc/settings.php:22
+msgid "Business details, booking and analytics. Name, phone and address must match the Google Business Profile exactly."
+msgstr ""
+
+#: inc/settings.php:28
+msgid "Business details (NAP)"
+msgstr ""
+
+#: inc/settings.php:29
+msgid "Strategy call & leads"
+msgstr ""
+
+#: inc/settings.php:30
+msgid "Analytics & consent"
+msgstr ""
+
+#: inc/settings.php:38
+msgid "Legal business name"
+msgstr ""
+
+#: inc/settings.php:38
+msgid "e.g. HelloProVision LLC"
+msgstr ""
+
+#: inc/settings.php:39
+msgid "Local number, formatted as on Google Business Profile."
+msgstr ""
+
+#: inc/settings.php:40
+msgid "Public email"
+msgstr ""
+
+#: inc/settings.php:41
+msgid "Mailing address (optional)"
+msgstr ""
+
+#: inc/settings.php:41
+msgid "Leave empty for a service-area business."
+msgstr ""
+
+#: inc/settings.php:42
+msgid "Service area line"
+msgstr ""
+
+#: inc/settings.php:43
+msgid "Footer positioning line"
+msgstr ""
+
+#: inc/settings.php:44
+msgid "LinkedIn profile URL"
+msgstr ""
+
+#: inc/settings.php:45
+msgid "Booking page URL"
+msgstr ""
+
+#: inc/settings.php:45
+msgid "Cal.com, Calendly or Google Calendar booking link. Name and email are passed along automatically."
+msgstr ""
+
+#: inc/settings.php:46
+msgid "Send new leads to"
+msgstr ""
+
+#: inc/settings.php:46
+msgid "Defaults to the site admin email."
+msgstr ""
+
+#: inc/settings.php:47
+msgid "Reply promise (business hours)"
+msgstr ""
+
+#: inc/settings.php:47
+msgid "Used in confirmation emails and the lead manager’s \"overdue\" flag."
+msgstr ""
+
+#: inc/settings.php:48
+msgid "GA4 measurement ID"
+msgstr ""
+
+#: inc/settings.php:48
+msgid "G-XXXXXXX. Leave empty to disable."
+msgstr ""
+
+#: inc/settings.php:49
+msgid "GA4 Measurement Protocol API secret"
+msgstr ""
+
+#: inc/settings.php:49
+msgid "Optional. Lets the lead manager report “qualified_lead” and “close_convert_lead” to GA4 when you move a lead. GA4 → Admin → Data streams → Measurement Protocol."
+msgstr ""
+
+#: inc/settings.php:50
+msgid "Google Tag Manager ID (alternative)"
+msgstr ""
+
+#: inc/settings.php:50
+msgid "GTM-XXXXXX. Use GA4 or GTM, not both."
+msgstr ""
+
+#: inc/settings.php:51
+msgid "Ask for cookie consent before analytics"
+msgstr ""
+
+#: inc/settings.php:51
+msgid "Uses Google Consent Mode v2. Required if you add advertising tags."
+msgstr ""
+
+#: inc/settings.php:52
+msgid "Show “fact to verify” marks to logged-in editors"
+msgstr ""
+
+#: inc/settings.php:52
+msgid "Visitors never see them."
+msgstr ""
+
+#: inc/setup.php:28
+msgid "Primary navigation"
+msgstr ""
+
+#: inc/setup.php:29
+msgid "Footer: Services"
+msgstr ""
+
+#: inc/setup.php:30
+msgid "Footer: Explore"
+msgstr ""
+
+#: inc/setup.php:31
+msgid "Footer: Legal"
+msgstr ""
+
+#: inc/tracking.php:64
+msgid "Cookie consent"
+msgstr ""
+
+#: inc/tracking.php:65
+msgid "I use analytics cookies to see which pages help owners find what they need. No ads, no selling data."
+msgstr ""
+
+#: inc/tracking.php:65
+msgid "Privacy policy"
+msgstr ""
+
+#: inc/tracking.php:67
+msgid "Accept"
+msgstr ""
+
+#: inc/tracking.php:68
+msgid "No thanks"
+msgstr ""
+
+#: index.php:15
+msgid "Search"
+msgstr ""
+
+#. translators: %s: search query
+#: index.php:20
+#, php-format
+msgid "Results for “%s”"
+msgstr ""
+
+#: index.php:43
+msgid "Nothing found. Try the Growth Scorecard, or book a call and ask directly."
+msgstr ""
+
+#. Template Name of the theme
+msgid "Blank canvas (no header or footer)"
+msgstr ""
+
+#: single.php:44
+#: single.php:45
+msgid "Related"
+msgstr ""
+
+#. translators: %s: client
+#: single.php:53
+#, php-format
+msgid "Case study: %s"
+msgstr ""
+
+#: single.php:65
+msgid "Next in this series:"
+msgstr ""
+
+#: single.php:65
+msgid "in writing"
+msgstr ""
+
+#: template-parts/scorecard.php:16
+msgid "What you get"
+msgstr ""
+
+#: template-parts/scorecard.php:18
+msgid "Your score across five areas"
+msgstr ""
+
+#: template-parts/scorecard.php:19
+#: template-parts/scorecard.php:65
+msgid "Your #1 priority"
+msgstr ""
+
+#: template-parts/scorecard.php:20
+msgid "Three practical next steps you can take this month"
+msgstr ""
+
+#: template-parts/scorecard.php:25
+#: template-parts/strategy-call-form.php:37
+msgid "Company"
+msgstr ""
+
+#: template-parts/scorecard.php:29
+#: template-parts/strategy-call-form.php:48
+msgid "Company website"
+msgstr ""
+
+#: template-parts/scorecard.php:30
+msgid "Start the scorecard"
+msgstr ""
+
+#: template-parts/scorecard.php:31
+msgid "Your results appear on screen right away. I’ll also email them to you — no newsletter, no spam."
+msgstr ""
+
+#: template-parts/scorecard.php:42
+msgid "0 of 15 answered"
+msgstr ""
+
+#: template-parts/scorecard.php:47
+msgid "See my results"
+msgstr ""
+
+#: template-parts/scorecard.php:58
+msgid "Your score"
+msgstr ""
+
+#: template-parts/scorecard.php:67
+msgid "Three next steps for this month"
+msgstr ""
+
+#: template-parts/scorecard.php:69
+msgid "Recommended reading:"
+msgstr ""
+
+#: template-parts/scorecard.php:72
+msgid "Want me to review your results with you?"
+msgstr ""
+
+#: template-parts/scorecard.php:73
+msgid "In a 30-minute call we’ll go through your scores and your website together, and decide what to fix first."
+msgstr ""
+
+#: template-parts/scorecard.php:79
+msgid "The scorecard needs JavaScript. You can also"
+msgstr ""
+
+#: template-parts/scorecard.php:79
+msgid "book a strategy call"
+msgstr ""
+
+#: template-parts/scorecard.php:79
+msgid "and we’ll go through it together."
+msgstr ""
+
+#: template-parts/strategy-call-form.php:15
+msgid "Select…"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:24
+msgid "1 · About you"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:25
+msgid "2 · Your business"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:26
+msgid "3 · Choose a time"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:30
+msgid "Something was missing or looked automated. Please check the fields and try again."
+msgstr ""
+
+#: template-parts/strategy-call-form.php:41
+msgid "Step 1 of 2 — How can I reach you?"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:48
+msgid "(if you have one)"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:51
+msgid "Continue"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:56
+msgid "Step 2 of 2 — A little about the business"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:65
+msgid "What’s the main challenge?"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:66
+msgid "Monthly marketing budget"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:78
+msgid "Continue to choose a time"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:79
+msgid "← Back"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:85
+msgid "Step 3 — Choose a time"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:86
+msgid "Thanks,"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:86
+msgid "there"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:86
+msgid "Pick a 30-minute slot that suits you."
+msgstr ""
+
+#: template-parts/strategy-call-form.php:87
+msgid "Your details are in. The calendar opens in a new tab with your name and email filled in."
+msgstr ""
+
+#: template-parts/strategy-call-form.php:88
+msgid "Open the calendar"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:90
+msgid "[Set the booking page URL in Appearance → Customize → HelloProVision site]"
+msgstr ""
+
+#: template-parts/strategy-call-form.php:95
+msgid "You’ll get a confirmation email right away. If it’s not a fit, I’ll tell you — and point you somewhere better."
+msgstr ""
+
+#: template-parts/wordmark.php:12
+msgid "Digital Growth Strategist"
+msgstr ""
+
+#: assets/js/editor/blocks.js:41
+msgid "Replace image"
+msgstr ""
+
+#: assets/js/editor/blocks.js:41
+msgid "Choose image"
+msgstr ""
+
+#: assets/js/editor/blocks.js:42
+msgid "Remove"
+msgstr ""
+
+#: assets/js/editor/blocks.js:61
+msgid "Photo (polaroid)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:62
+msgid "A real photo, or a halftone placeholder until the shoot is done."
+msgstr ""
+
+#: assets/js/editor/blocks.js:74
+msgid "Photo"
+msgstr ""
+
+#: assets/js/editor/blocks.js:76
+#: assets/js/editor/blocks.js:105
+msgid "Crop"
+msgstr ""
+
+#: assets/js/editor/blocks.js:77
+#: assets/js/editor/blocks.js:107
+msgid "Alt text"
+msgstr ""
+
+#: assets/js/editor/blocks.js:77
+msgid "Describe the photo, e.g. “Áron reviewing a sitemap with a client in Fort Myers”."
+msgstr ""
+
+#: assets/js/editor/blocks.js:78
+msgid "Placeholder caption (left|right)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:79
+msgid "Orange placeholder"
+msgstr ""
+
+#: assets/js/editor/blocks.js:80
+msgid "Above the fold (load first)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:89
+msgid "Project screenshot"
+msgstr ""
+
+#: assets/js/editor/blocks.js:90
+msgid "A project screenshot taped to the wall, in a browser frame."
+msgstr ""
+
+#: assets/js/editor/blocks.js:102
+msgid "Project"
+msgstr ""
+
+#: assets/js/editor/blocks.js:103
+msgid "Project name"
+msgstr ""
+
+#: assets/js/editor/blocks.js:104
+msgid "Choose screenshot"
+msgstr ""
+
+#: assets/js/editor/blocks.js:106
+msgid "Placeholder colour (0 = automatic)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:116
+msgid "Case studies grid"
+msgstr ""
+
+#: assets/js/editor/blocks.js:117
+msgid "Published case studies (featured first), plus “coming soon” cards for projects without a write-up."
+msgstr ""
+
+#: assets/js/editor/blocks.js:128
+msgid "Layout"
+msgstr ""
+
+#: assets/js/editor/blocks.js:129
+#: assets/js/editor/blocks.js:150
+msgid "How many"
+msgstr ""
+
+#: assets/js/editor/blocks.js:130
+msgid "Projects coming soon (comma separated)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:131
+msgid "Industry filter"
+msgstr ""
+
+#: assets/js/editor/blocks.js:140
+msgid "Insights cards"
+msgstr ""
+
+#: assets/js/editor/blocks.js:141
+msgid "Latest articles, optionally from one topic. Planned titles fill empty slots as “In writing”."
+msgstr ""
+
+#: assets/js/editor/blocks.js:148
+msgid "Articles"
+msgstr ""
+
+#: assets/js/editor/blocks.js:149
+msgid "Topic"
+msgstr ""
+
+#: assets/js/editor/blocks.js:151
+msgid "Fill with planned titles"
+msgstr ""
+
+#: assets/js/editor/blocks.js:160
+msgid "Ticker band"
+msgstr ""
+
+#: assets/js/editor/blocks.js:161
+msgid "The tilted fluoro band that scrolls sideways."
+msgstr ""
+
+#: assets/js/editor/blocks.js:167
+msgid "Ticker"
+msgstr ""
+
+#: assets/js/editor/blocks.js:168
+msgid "One item per line"
+msgstr ""
+
+#: assets/js/editor/blocks.js:177
+msgid "Breadcrumbs"
+msgstr ""
+
+#: assets/js/editor/blocks.js:177
+msgid "Home → section → page, built from the page hierarchy."
+msgstr ""
+
+#: assets/js/editor/blocks.js:178
+msgid "Phone & email"
+msgstr ""
+
+#: assets/js/editor/blocks.js:178
+msgid "Shows the phone and email set in Appearance → Customize."
+msgstr ""
+
+#: assets/js/editor/blocks.js:179
+msgid "Case study snapshot"
+msgstr ""
+
+#: assets/js/editor/blocks.js:179
+msgid "Client, industry, location, services, timeline and website from the case study fields."
+msgstr ""
+
+#: assets/js/editor/blocks.js:180
+msgid "Case study headline result"
+msgstr ""
+
+#: assets/js/editor/blocks.js:180
+msgid "The headline number from the case study fields."
+msgstr ""
+
+#: assets/js/editor/blocks.js:181
+msgid "Strategy call form"
+msgstr ""
+
+#: assets/js/editor/blocks.js:181
+msgid "Two-step qualifying form. Leads go to the Leads screen."
+msgstr ""
+
+#: assets/js/editor/blocks.js:182
+msgid "The 15-question scorecard. Results are saved as leads."
+msgstr ""
+
+#: assets/js/editor/blocks.js:204
+msgid "Pink highlight"
+msgstr ""
+
+#: assets/js/editor/blocks.js:205
+msgid "Marker circle"
+msgstr ""
+
+#: assets/js/editor/blocks.js:206
+msgid "Scribble underline"
+msgstr ""
+
+#: assets/js/editor/blocks.js:207
+msgid "Hand-written note"
+msgstr ""
+
+#: assets/js/editor/blocks.js:208
+msgid "Fact to verify"
+msgstr ""
+
+#: assets/js/editor/blocks.js:228
+msgid "too long for Google"
+msgstr ""
+
+#: assets/js/editor/blocks.js:235
+msgid "Search & sharing"
+msgstr ""
+
+#: assets/js/editor/blocks.js:236
+msgid "SEO title"
+msgstr ""
+
+#: assets/js/editor/blocks.js:237
+msgid "Meta description"
+msgstr ""
+
+#: assets/js/editor/blocks.js:238
+msgid "Hide from search engines (noindex)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:240
+msgid "Page role"
+msgstr ""
+
+#: assets/js/editor/blocks.js:242
+msgid "Standard page"
+msgstr ""
+
+#: assets/js/editor/blocks.js:242
+msgid "About (ProfilePage schema)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:243
+msgid "Service page (Service schema)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:243
+msgid "Services hub"
+msgstr ""
+
+#: assets/js/editor/blocks.js:245
+msgid "Thank-you page"
+msgstr ""
+
+#: assets/js/editor/blocks.js:245
+msgid "Legal"
+msgstr ""
+
+#: assets/js/editor/blocks.js:249
+msgid "Service name (schema)"
+msgstr ""
+
+#: assets/js/editor/blocks.js:259
+msgid "Case study facts"
+msgstr ""
+
+#: assets/js/editor/blocks.js:260
+msgid "Every number needs a timeframe and a source, and the client’s written permission."
+msgstr ""
+
+#: assets/js/editor/blocks.js:263
+msgid "Services delivered"
+msgstr ""
+
+#: assets/js/editor/blocks.js:265
+msgid "Client website"
+msgstr ""
+
+#: assets/js/editor/blocks.js:266
+msgid "Card headline"
+msgstr ""
+
+#: assets/js/editor/blocks.js:266
+msgid "Lead with the result, not the client name."
+msgstr ""
+
+#: assets/js/editor/blocks.js:267
+msgid "Headline result: number"
+msgstr ""
+
+#: assets/js/editor/blocks.js:268
+msgid "Headline result: context"
+msgstr ""
+
+#: assets/js/editor/blocks.js:269
+msgid "Headline result: source"
+msgstr ""
+
+#: assets/js/editor/blocks.js:270
+msgid "Featured (shown first)"
+msgstr ""

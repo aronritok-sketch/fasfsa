@@ -1,0 +1,49 @@
+/* ==========================================================================
+   WordPress
+   ========================================================================== */
+
+/* Sticky header under the admin bar */
+.admin-bar .site-header { top: calc(32px + env(safe-area-inset-top, 0px)); }
+@media (max-width: 782px) { .admin-bar .site-header { top: calc(46px + env(safe-area-inset-top, 0px)); } }
+@media (max-width: 600px) { .admin-bar .site-header { top: 0; } }
+
+/* Accessibility helpers used by core */
+.screen-reader-text { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.screen-reader-text:focus { clip-path: none; width: auto; height: auto; z-index: 100; background: var(--k-pink); color: var(--k-ink); padding: .75rem 1rem; }
+
+/* Visitors never see prototype "fact to verify" marks; editors do (html.hpv-edit). */
+html:not(.hpv-edit) .tbd { background: none; outline: 0; padding: 0; }
+
+/* Core block wrappers: the design classes do the work */
+.wp-block-group { box-sizing: border-box; }
+figure { margin: 0; }
+.wp-block-quote.wp-block-quote { border: 0; padding: 0; margin: 0; } /* beats core block CSS, which loads later */
+.wp-block-quote p { margin: 0; }
+.wp-block-quote.quote > p { display: inline; } /* keeps the poster quote marks on the text line */
+.wp-block-separator.rule { border: 0; border-top: 3px solid var(--c-rule); opacity: 1; margin: 0; }
+.wp-block-details summary { cursor: pointer; }
+.wp-block-list.fit, .wp-block-list.principles, .wp-block-list.steps { padding-left: 0; }
+.entry > * + * { margin-top: 1em; }
+.hpv-ssr { display: block; }
+
+/* Consent banner */
+.consent {
+  position: fixed; left: var(--gutter); bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px)); z-index: 97;
+  max-width: 30rem; padding: 1.25rem; display: grid; gap: .9rem;
+  background: var(--k-card); color: var(--k-ink); border: 3px solid var(--k-ink); box-shadow: 8px 8px 0 var(--k-pink);
+  font-size: .9375rem; transform: rotate(-.6deg);
+}
+
+/* Search form (search results page) */
+.search-form { display: flex; gap: .5rem; margin-top: var(--s-3); max-width: 34rem; }
+.search-form label { flex: 1; }
+.search-form .search-field { width: 100%; min-height: 52px; padding: 0 1rem; border: 3px solid var(--k-ink); background: #fff; font-size: 1rem; }
+.search-form .search-submit { min-height: 52px; padding: 0 1.25rem; border: 0; background: var(--k-ink); color: var(--k-paper); font-weight: 800; text-transform: uppercase; cursor: pointer; }
+
+/* Pagination */
+.pagination { margin-top: var(--s-6); }
+.pagination .nav-links { display: flex; gap: .5rem; flex-wrap: wrap; }
+.pagination .page-numbers { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0 .75rem; border: 3px solid var(--k-ink); font-weight: 800; text-decoration: none; }
+.pagination .page-numbers.current { background: var(--k-ink); color: var(--k-paper); }
+
+/* Case study headline stat */

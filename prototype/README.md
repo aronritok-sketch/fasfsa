@@ -1,6 +1,6 @@
 # Áron Ritók-Filip founder site: HTML prototype
 
-This is step 1 of the build approach in the *HelloProVision — Áron Ritók-Filip Founder Brand Website Blueprint*: approve the design as static HTML first, then port it into the GeneratePress child theme.
+This is step 1 of the build approach in the *HelloProVision — Áron Ritók-Filip Founder Brand Website Blueprint*: approve the design as static HTML first, then port it into WordPress. The finished theme is in `theme/helloprovision` and is generated from this prototype by `tools/build_theme.py`.
 
 ## Build
 

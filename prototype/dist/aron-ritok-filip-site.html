@@ -132,19 +132,25 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .display .hl, .h1 .hl, .h2 .hl, .quote .hl, .statement .hl { padding: 0 .06em; background: linear-gradient(transparent 16%, var(--c-mark) 16% 92%, transparent 92%); }
 .hand { font-family: var(--f-hand); font-weight: 400; color: var(--c-hand); font-size: clamp(1.375rem, 2.2vw, 2rem); line-height: 1.1; display: inline-block; transform: rotate(-3deg); }
 
-/* Marker circle and scribble underline (inline SVG inside) */
-.circled { position: relative; display: inline-block; }
-.circled svg { position: absolute; left: -6%; top: -14%; width: 112%; height: 128%; overflow: visible; pointer-events: none; }
-.circled path, .scribble path { fill: none; stroke: var(--k-orange); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
-.bg-mark .circled path, .bg-mark .scribble path { stroke: var(--k-ink); }
-.scribble { position: relative; display: inline-block; }
-.scribble svg { position: absolute; left: -2%; bottom: -.12em; width: 104%; height: .3em; overflow: visible; pointer-events: none; }
+/* Marker circle and scribble underline (drawn in CSS, so editors can apply them to any words) */
+.circled, .scribble { position: relative; display: inline-block; }
+.circled::after, .scribble::after { content: ""; position: absolute; pointer-events: none; background: no-repeat center / 100% 100%; }
+.circled::after { left: -6%; top: -14%; width: 112%; height: 128%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 200' preserveAspectRatio='none'%3E%3Cpath d='M40 120 C 20 40, 260 8, 420 18 C 560 28, 610 90, 560 150 C 500 205, 200 205, 90 170 C 30 150, 18 105, 60 70' fill='none' stroke='%23FF5A1F' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
+.scribble::after { left: -2%; bottom: -.14em; width: 104%; height: .3em; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 30' preserveAspectRatio='none'%3E%3Cpath d='M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18' fill='none' stroke='%23FF5A1F' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
+.bg-mark .circled::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 200' preserveAspectRatio='none'%3E%3Cpath d='M40 120 C 20 40, 260 8, 420 18 C 560 28, 610 90, 560 150 C 500 205, 200 205, 90 170 C 30 150, 18 105, 60 70' fill='none' stroke='%23121212' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
+.bg-mark .scribble::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 30' preserveAspectRatio='none'%3E%3Cpath d='M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18' fill='none' stroke='%23121212' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E"); }
 @media (prefers-reduced-motion: no-preference) {
-  .circled path, .scribble path { stroke-dasharray: 2400; animation: draw 1.4s .3s cubic-bezier(.6,0,.2,1) both; }
+  .circled::after, .scribble::after { animation: draw 1.1s .35s cubic-bezier(.6,0,.2,1) both; }
 }
-@keyframes draw { from { stroke-dashoffset: 2400; } to { stroke-dashoffset: 0; } }
+@keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
 /* Tape and stickers */
+.hero--home > .wrap::before, .hero--home > .wrap::after {
+  content: ""; position: absolute; z-index: 3; width: clamp(6rem, 12vw, 11rem); height: 2rem;
+  background: var(--k-tape); box-shadow: 0 1px 2px rgba(0,0,0,.08); pointer-events: none;
+}
+.hero--home > .wrap::before { left: 4%; top: -.5rem; transform: rotate(-8deg); }
+.hero--home > .wrap::after { right: 22%; top: 4rem; transform: rotate(6deg); }
 .tape { position: absolute; z-index: 3; width: clamp(6rem, 12vw, 11rem); height: 2rem; background: var(--k-tape); box-shadow: 0 1px 2px rgba(0,0,0,.08); transform: rotate(-8deg); pointer-events: none; }
 .sticker {
   position: absolute; z-index: 4; width: clamp(7rem, 12vw, 10.5rem); aspect-ratio: 1; border-radius: 50%;
@@ -232,6 +238,7 @@ html.hide-tbd .tbd { background: none; outline: 0; padding: 0; }
 .local-time i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--k-orange); margin-right: .45rem; }
 .nav-toggle { display: none; min-height: 44px; min-width: 44px; padding: 0 1rem; background: var(--k-ink); color: var(--k-paper); border: 0; cursor: pointer; font: 800 .875rem/1 var(--f-sans); letter-spacing: .08em; text-transform: uppercase; }
 .header-call { display: none; }
+.mobile-menu .nav-toggle { display: inline-flex; align-items: center; }
 @media (max-width: 79.99rem) { .local-time { display: none; } }
 @media (max-width: 63.99rem) {
   .nav__list, .nav > .btn:not(.header-call) { display: none; }
@@ -390,31 +397,33 @@ a:hover .shot, .work-item:hover .shot, .case-card:hover .shot { transform: rotat
 .block:hover { transform: rotate(0) translateY(-3px); box-shadow: 6px 6px 0 var(--k-ink); }
 .block__num { position: absolute; top: -1rem; right: 1rem; background: var(--k-ink); color: var(--k-paper); padding: .4rem .6rem; font: 400 1.125rem/1 var(--f-poster); letter-spacing: .02em; }
 .block .h3 { font: 400 clamp(1.625rem, 2.6vw, 2.25rem)/.95 var(--f-poster); text-transform: uppercase; padding-right: 2.5rem; }
-.block p { color: var(--k-ink-2); font-size: 1rem; line-height: 1.5; max-width: 46ch; }
+.block p:not([class*="__"]) { color: var(--k-ink-2); font-size: 1rem; line-height: 1.5; max-width: 46ch; }
 
 /* ---------- Process: marker line with stickers ---------- */
 .process { list-style: none; display: grid; position: relative; }
+.process--3 { --steps: 3; } .process--4 { --steps: 4; } .process--5 { --steps: 5; }
 .process__step { position: relative; display: grid; gap: .5rem; align-content: start; }
-.process__dot { position: relative; z-index: 1; width: 30px; height: 30px; border-radius: 50%; background: var(--c-bg); border: 4px solid var(--c-ink); }
-.process__step:first-child .process__dot { background: var(--k-pink); }
-.process__step:first-child .process__dot::after { content: "start here!"; position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translateX(-30%) rotate(-6deg); font: 400 1.5rem/1 var(--f-hand); color: var(--c-hand); white-space: nowrap; }
+/* The dot is the step's ::before (a grid item), so block content needs no empty markup. */
+.process__step::before { content: ""; position: relative; z-index: 1; box-sizing: border-box; width: 30px; height: 30px; border-radius: 50%; background: var(--c-bg); border: 4px solid var(--c-ink); }
+.process__step:first-child::before { background: var(--k-pink); }
+.process__step:first-child::after { content: "start here!"; position: absolute; left: 15px; bottom: calc(100% + 6px); transform: translateX(-30%) rotate(-6deg); font: 400 1.5rem/1 var(--f-hand); color: var(--c-hand); white-space: nowrap; }
 .process__num { color: var(--c-muted); }
 .process__step .h3 { font: 400 clamp(1.75rem, 3vw, 2.75rem)/.95 var(--f-poster); text-transform: uppercase; }
-.process__step p { color: var(--c-ink-2); font-size: 1rem; max-width: 30ch; }
+.process__step p:not([class*="__"]) { color: var(--c-ink-2); font-size: 1rem; max-width: 30ch; }
 @media (min-width: 64rem) {
   .process { grid-template-columns: repeat(var(--steps, 4), minmax(0,1fr)); column-gap: var(--gutter); padding-top: 2.75rem; }
   .process::before { content: ""; position: absolute; left: 12px; right: 0; top: calc(2.75rem + 13px); height: 4px; background: repeating-linear-gradient(90deg, var(--c-ink) 0 18px, transparent 18px 28px); }
   .process__step { padding-right: var(--s-3); }
-  .process__dot { margin-bottom: var(--s-3); }
+  .process__step::before { margin-bottom: var(--s-3); }
 }
 @media (max-width: 63.99rem) {
   .process { padding-top: .5rem; }
   .process::before { content: ""; position: absolute; left: 13px; top: 1rem; bottom: 1rem; width: 4px; background: repeating-linear-gradient(180deg, var(--c-ink) 0 18px, transparent 18px 28px); }
   .process__step { grid-template-columns: 30px 1fr; column-gap: var(--s-3); padding-bottom: var(--s-6); }
   .process__step:last-child { padding-bottom: 0; }
-  .process__step > :not(.process__dot) { grid-column: 2; }
-  .process__dot { grid-row: 1 / span 3; }
-  .process__step:first-child .process__dot::after { left: calc(100% + 3.5rem); bottom: auto; top: -.2rem; transform: rotate(-6deg); }
+  .process__step > * { grid-column: 2; }
+  .process__step::before { grid-column: 1; grid-row: 1 / span 3; }
+  .process__step:first-child::after { left: calc(30px + 3.5rem); bottom: auto; top: -.2rem; transform: rotate(-6deg); }
 }
 
 /* ---------- Service cards ---------- */
@@ -442,7 +451,7 @@ a:hover .shot, .work-item:hover .shot, .case-card:hover .shot { transform: rotat
 @media (min-width: 64rem) {
   .service-card--wide { grid-template-columns: 5fr 5fr 2fr; column-gap: var(--s-6); align-items: start; }
   .service-card--wide .service-card__head { display: grid; gap: var(--s-3); }
-  .service-card--wide .arrow-link { justify-self: end; align-self: end; }
+  .service-card--wide > .arrow-link, .service-card--wide > p:has(> .arrow-link) { justify-self: end; align-self: end; }
 }
 
 /* ---------- Work wall ---------- */
@@ -505,19 +514,19 @@ ul.fit li:first-child { border-top: 0; }
 
 /* ---------- Steps ---------- */
 .steps { list-style: none; display: grid; gap: 0; border-top: 3px solid var(--c-rule); }
-.steps li { display: grid; gap: .5rem var(--gutter); padding: clamp(1.25rem, 2.6vw, 2rem) 0; border-bottom: 3px solid var(--c-rule); transition: background-color 150ms; }
-.steps li:hover { background: var(--c-mark); color: var(--k-ink); --c-ink-2: var(--k-ink-2); }
+.steps > * { display: grid; gap: .5rem var(--gutter); padding: clamp(1.25rem, 2.6vw, 2rem) 0; border-bottom: 3px solid var(--c-rule); transition: background-color 150ms; }
+.steps > *:hover { background: var(--c-mark); color: var(--k-ink); --c-ink-2: var(--k-ink-2); }
 .steps__num { font: 400 clamp(4rem, 9vw, 8rem)/.8 var(--f-poster); color: transparent; -webkit-text-stroke: 2px var(--c-ink); font-variant-numeric: tabular-nums; }
-.steps li:hover .steps__num { -webkit-text-stroke-color: var(--k-ink); color: var(--k-ink); }
+.steps > *:hover .steps__num { -webkit-text-stroke-color: var(--k-ink); color: var(--k-ink); }
 .steps__time { display: inline-block; margin-top: .5rem; padding: .3rem .5rem; background: var(--k-ink); color: var(--k-paper); transform: rotate(-2deg); }
-.steps p { color: var(--c-ink-2); max-width: 54ch; font-weight: 500; }
+.steps p:not([class*="__"]) { color: var(--c-ink-2); max-width: 54ch; font-weight: 500; }
 .steps .h3 { font: 400 clamp(1.75rem, 3vw, 2.75rem)/.95 var(--f-poster); text-transform: uppercase; }
-@media (min-width: 48rem) { .steps li { grid-template-columns: 2fr 4fr 6fr; align-items: center; padding-inline: var(--s-2); } }
+@media (min-width: 48rem) { .steps > * { grid-template-columns: 2fr 4fr 6fr; align-items: center; padding-inline: var(--s-2); } }
 
 /* ---------- CTA bands ---------- */
 .cta-band { display: grid; gap: var(--s-4); align-items: center; }
 @media (min-width: 64rem) { .cta-band { grid-template-columns: 8fr 4fr; } .cta-band__action { justify-self: end; } }
-.cta-band p { max-width: 52ch; color: var(--c-ink-2); font-size: 1.125rem; font-weight: 500; }
+.cta-band p:not([class*="__"]) { max-width: 52ch; color: var(--c-ink-2); font-size: 1.125rem; font-weight: 500; }
 .final-cta { display: grid; gap: var(--s-4); max-width: 80rem; }
 .final-cta .h2 { font-size: clamp(3rem, 9vw, 9rem); line-height: .86; }
 .final-cta__alt { font: 400 1.5rem/1.2 var(--f-hand); color: var(--c-hand); transform: rotate(-2deg); display: inline-block; }
@@ -537,7 +546,7 @@ ul.fit li:first-child { border-top: 0; }
 .insight-card__title { font: 400 clamp(1.625rem, 2.4vw, 2.25rem)/.95 var(--f-poster); text-transform: uppercase; }
 .insight-card__title a { text-decoration: none; }
 .insight-card__title a::after { content: ""; position: absolute; inset: 0; }
-.insight-card p { color: var(--k-ink-2); font-size: .9375rem; font-weight: 500; }
+.insight-card p:not([class*="__"]) { color: var(--k-ink-2); font-size: .9375rem; font-weight: 500; }
 .insight-card__meta { color: var(--k-muted); margin-top: auto; }
 .insight-card--draft { background: transparent; border-style: dashed; color: var(--c-ink); }
 .insight-card--draft .insight-card__title { opacity: .6; }
@@ -556,11 +565,11 @@ ul.fit li:first-child { border-top: 0; }
 
 /* ---------- Timeline ---------- */
 .timeline { list-style: none; display: grid; border-top: 3px solid var(--c-rule); }
-.timeline li { display: grid; grid-template-columns: 9rem 16rem 1fr; gap: var(--gutter); padding: 1.25rem 0; border-bottom: 3px solid var(--c-rule); align-items: center; }
+.timeline > * { display: grid; grid-template-columns: 9rem 16rem 1fr; gap: var(--gutter); padding: 1.25rem 0; border-bottom: 3px solid var(--c-rule); align-items: center; }
 .timeline__when { justify-self: start; background: var(--k-ink); color: var(--k-paper); padding: .3rem .5rem; transform: rotate(-2deg); }
 .timeline strong { font: 400 1.75rem/1 var(--f-poster); text-transform: uppercase; }
-.timeline p { color: var(--c-ink-2); font-weight: 500; }
-@media (max-width: 47.99rem) { .timeline li { grid-template-columns: 1fr; gap: .4rem; } }
+.timeline p:not([class*="__"]) { color: var(--c-ink-2); font-weight: 500; }
+@media (max-width: 47.99rem) { .timeline > * { grid-template-columns: 1fr; gap: .4rem; } }
 
 /* ---------- Honest note ---------- */
 .honest { position: relative; display: grid; gap: var(--s-3); justify-items: start; padding: clamp(1.75rem, 4.5vw, 4rem); background: var(--k-orange); color: var(--k-ink); border: 3px solid var(--k-ink); box-shadow: 10px 10px 0 var(--k-ink); transform: rotate(-1deg); --c-ink: var(--k-ink); --c-ink-2: #1F1813; --c-bg: var(--k-orange); }
@@ -568,11 +577,11 @@ ul.fit li:first-child { border-top: 0; }
 
 /* ---------- Principles ---------- */
 .principles { list-style: none; display: grid; counter-reset: pr; border-top: 3px solid var(--c-rule); }
-.principles li { display: grid; gap: .5rem var(--gutter); padding: clamp(1.5rem, 3vw, 2.25rem) 0; border-bottom: 3px solid var(--c-rule); counter-increment: pr; }
+.principles > * { display: grid; gap: .5rem var(--gutter); padding: clamp(1.5rem, 3vw, 2.25rem) 0; border-bottom: 3px solid var(--c-rule); counter-increment: pr; }
 .principles h3 { font: 400 clamp(2rem, 3.6vw, 3.25rem)/.92 var(--f-poster); text-transform: uppercase; }
 .principles h3::before { content: counter(pr, decimal-leading-zero) " "; color: transparent; -webkit-text-stroke: 1.5px var(--c-ink); }
-.principles p { color: var(--c-ink-2); max-width: 52ch; font-size: 1.125rem; font-weight: 500; }
-@media (min-width: 48rem) { .principles li { grid-template-columns: 6fr 6fr; align-items: center; } }
+.principles p:not([class*="__"]) { color: var(--c-ink-2); max-width: 52ch; font-size: 1.125rem; font-weight: 500; }
+@media (min-width: 48rem) { .principles > * { grid-template-columns: 6fr 6fr; align-items: center; } }
 
 /* ---------- Case study page ---------- */
 .snapshot { display: grid; align-content: start; padding: var(--s-3); background: var(--k-card); color: var(--k-ink); border: 3px solid var(--k-ink); transform: rotate(-.8deg); --c-muted: var(--k-muted); }
@@ -584,12 +593,12 @@ ul.fit li:first-child { border-top: 0; }
 @media (min-width: 64rem) { .snapshot { position: sticky; top: calc(var(--header-h) + 2rem); } }
 .story h2 { font: 400 clamp(2rem, 3.8vw, 3.25rem)/.92 var(--f-poster); text-transform: uppercase; margin: var(--s-8) 0 var(--s-3); }
 .story h2:first-child { margin-top: 0; }
-.story p { color: var(--c-ink-2); max-width: var(--measure); }
+.story p:not([class*="__"]) { color: var(--c-ink-2); max-width: var(--measure); }
 .story p + p { margin-top: 1.1em; }
 .story .word-note { display: block; margin-top: .5rem; color: var(--c-muted); }
 .testimonial { display: grid; gap: var(--s-3); max-width: 64rem; margin: 0; }
 .testimonial blockquote { margin: 0; font: 400 clamp(2rem, 4.4vw, 4rem)/.95 var(--f-poster); text-transform: uppercase; }
-.testimonial figcaption { font: 400 1.5rem/1.1 var(--f-hand); color: var(--c-hand); }
+.testimonial figcaption, .testimonial .testimonial__by { font: 400 1.5rem/1.1 var(--f-hand); color: var(--c-hand); }
 
 /* ---------- Article ---------- */
 .article-body { font-size: 1.125rem; line-height: 1.7; }
@@ -604,6 +613,7 @@ ul.fit li:first-child { border-top: 0; }
 @media (min-width: 64rem) { .article-aside { position: sticky; top: calc(var(--header-h) + 2rem); } }
 .author { display: grid; grid-template-columns: 3.5rem 1fr; gap: var(--s-2); align-items: center; }
 .author p { font-size: .9375rem; }
+.author__name { font-weight: 700; }
 
 /* ---------- Forms ---------- */
 .form { display: grid; gap: var(--s-3); }
@@ -712,6 +722,24 @@ ul.fit li:first-child { border-top: 0; }
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
+/* ---------- Small modifiers (kept as classes so block content never needs inline styles) ---------- */
+.text-ink { color: var(--c-ink); }
+h3 .muted, .h3 .muted { font-weight: 400; }
+.fit--stack { display: block; }
+.label--plain { border: 0; padding: 0; }
+.grid--rows { row-gap: var(--gutter); }
+.mobile-menu__list--inline { max-width: 36rem; }
+.testimonial--sm { gap: var(--s-2); }
+.testimonial--sm blockquote { font-size: 1.5rem; }
+.stat--headline { border-top-color: var(--c-ink); }
+.stat--headline .stat__num { font-size: clamp(4rem, 8vw, 7rem); }
+button.arrow-link { background: none; border: 0; cursor: pointer; }
+/* Scorecard results: next steps sit in a narrow column */
+.steps--compact > *, .steps--compact > *:hover { grid-template-columns: 3.5rem 1fr; }
+.steps--compact .steps__num { font-size: 3.5rem; grid-row: span 2; }
+.steps--compact .h3 { font-size: clamp(1.375rem, 2vw, 1.75rem); }
+.steps--compact p { grid-column: 2; }
+
 </style>
 </head>
 <body>
@@ -745,7 +773,7 @@ ul.fit li:first-child { border-top: 0; }
       <span class="wordmark__name">Áron Ritók-Filip</span>
       <span class="wordmark__role">Digital Growth Strategist</span>
     </a>
-    <button class="nav-toggle" type="button" id="nav-close" style="display:inline-flex">Close</button>
+    <button class="nav-toggle" type="button" id="nav-close">Close</button>
   </div>
   <ul class="mobile-menu__list">
     <li><a href="#services">Services <span aria-hidden="true">→</span></a></li>
@@ -765,14 +793,12 @@ ul.fit li:first-child { border-top: 0; }
 <!-- 1 · Hero -->
 <section class="hero hero--home" id="home-hero">
   <div class="wrap">
-    <span class="tape" style="left:4%;top:1rem" aria-hidden="true"></span>
-    <span class="tape" style="right:22%;top:5.5rem;transform:rotate(6deg)" aria-hidden="true"></span>
     <div class="sticker" aria-hidden="true">Straight from Fort&nbsp;Myers</div>
     <span class="eyebrow">Digital Growth Strategist · Fort Myers · Naples · Cape Coral</span>
     <h1 class="display">
       <span class="row">Nice website.</span>
       <span class="row">Where are</span>
-      <span class="row"><span class="circled">the calls?<svg viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true"><path d="M40 120 C 20 40, 260 8, 420 18 C 560 28, 610 90, 560 150 C 500 205, 200 205, 90 170 C 30 150, 18 105, 60 70"/></svg></span></span>
+      <span class="row"><span class="circled">the calls?</span></span>
     </h1>
     <div class="grid hero__grid">
       <div class="col-6 stack-lg">
@@ -840,7 +866,7 @@ ul.fit li:first-child { border-top: 0; }
   <div class="wrap grid">
     <h2 class="h2 col-9">Your website looks professional. So why isn’t it creating opportunities?</h2>
     <div class="col-6 start-2 body stack-sm">
-      <p class="lead" style="color:var(--c-ink)">Most Florida businesses we meet don’t have a design problem. They have a <mark class="hl">system problem.</mark></p>
+      <p class="lead text-ink">Most Florida businesses we meet don’t have a design problem. They have a <mark class="hl">system problem.</mark></p>
       <p>The website was built by one company, the SEO is handled by another, the ads by a third — and nobody owns the one number that matters: how many qualified customers reach out each month.</p>
     </div>
     <div class="blocks blocks--3 mt-4">
@@ -871,27 +897,23 @@ ul.fit li:first-child { border-top: 0; }
       <h2 class="h2">Growth is a <mark class="hl">system</mark>, not a set of tactics.</h2>
       <p class="lead">Before anything gets built, we find out where your growth is actually stuck. Then every piece — website, search, campaigns, tracking — is designed to work toward the same goal.</p>
     </div>
-    <ol class="process" style="--steps:4">
+    <ol class="process process--4">
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">01</span>
         <h3 class="h3">Research</h3>
         <p>Your market, your competitors, and how customers in your area search, compare and decide.</p>
       </li>
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">02</span>
         <h3 class="h3">Strategy</h3>
         <p>Positioning, offer and priorities. What to do first, and what to ignore.</p>
       </li>
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">03</span>
         <h3 class="h3">Digital System</h3>
         <p>Website, local search, campaigns and tracking, built to work together.</p>
       </li>
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">04</span>
         <h3 class="h3">Growth</h3>
         <p>Measure qualified opportunities, learn, improve — every month.</p>
@@ -1195,9 +1217,9 @@ ul.fit li:first-child { border-top: 0; }
   <div class="wrap grid">
     <div class="hero__text col-8">
       <span class="eyebrow">Error 404</span>
-      <h1 class="display">This page took a <span class="scribble">different route<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>.</h1>
+      <h1 class="display">This page took a <span class="scribble">different route</span>.</h1>
       <p class="lead">The link may be old, or the page has moved. Here are the places most owners are looking for.</p>
-      <ul class="mobile-menu__list mt-4" style="max-width:36rem">
+      <ul class="mobile-menu__list mobile-menu__list--inline mt-4">
         <li><a href="#services">Services <span aria-hidden="true">→</span></a></li>
         <li><a href="#case-studies">Case Studies <span aria-hidden="true">→</span></a></li>
         <li><a href="#strategy-call">Book a Strategy Call <span aria-hidden="true">→</span></a></li>
@@ -1213,7 +1235,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-7">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">About</li></ol></nav>
       <span class="eyebrow">About Áron Ritók-Filip</span>
-      <h1 class="display">I don’t just advise businesses. I <span class="scribble">build and grow them<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span> myself.</h1>
+      <h1 class="display">I don’t just advise businesses. I <span class="scribble">build and grow them</span> myself.</h1>
       <p class="lead">I’m Áron Ritók-Filip — founder of HelloProVision and a digital growth strategist working with Florida businesses. I help owners turn their online presence into a system that brings in qualified opportunities, predictably.</p>
       <div class="actions">
         <a class="btn" href="#strategy-call">Book a Strategy Call <span aria-hidden="true">→</span></a>
@@ -1381,7 +1403,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">Case Studies</li></ol></nav>
       <span class="eyebrow">Case Studies</span>
-      <h1 class="display">Proof, <span class="scribble">not promises<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>.</h1>
+      <h1 class="display">Proof, <span class="scribble">not promises</span>.</h1>
       <p class="lead">Short business stories: what wasn’t working, what we decided, what we built and what changed — with every number tied to a timeframe and a source.</p>
     </div>
   </div>
@@ -1478,9 +1500,9 @@ ul.fit li:first-child { border-top: 0; }
     </aside>
 
     <div class="col-8 start-5">
-      <div class="stat" style="border-top-color:var(--c-ink)">
+      <div class="stat stat--headline">
         <span class="eyebrow">Headline result</span>
-        <span class="stat__num" style="font-size:clamp(4rem,8vw,7rem)"><span class="tbd">[X]</span></span>
+        <span class="stat__num"><span class="tbd">[X]</span></span>
         <span class="stat__ctx">qualified inquiries per month, <span class="tbd">[timeframe]</span> after launch</span>
         <span class="stat__src">Source: <span class="tbd">[GA4 / CRM / client report]</span></span>
       </div>
@@ -1500,7 +1522,7 @@ ul.fit li:first-child { border-top: 0; }
 
         <h2>What we built</h2>
         <p class="tbd">[150–250 words. Website, SEO, campaigns, tracking. 2–4 images or before/after.]</p>
-        <div class="grid mt-4" style="row-gap:var(--gutter)">
+        <div class="grid grid--rows mt-4">
           <div class="col-6"><div class="photo photo--land" role="img" aria-label="The Imperial Kitchens website before the project"><span class="photo__note"><span>Before</span><span>Screenshot</span></span></div></div>
           <div class="col-6"><figure class="shot shot--land tone-4" role="img" aria-label="The Imperial Kitchens website after the project"><div class="shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Imperial Kitchens</span></div><div class="shot__view"><div class="shot__ph" aria-hidden="true"><span class="shot__nav"><i></i><i></i><i></i></span><span class="shot__title">Imperial Kitchens</span><span class="shot__lines"><i></i><i></i><i></i></span><span class="shot__btn"></span></div></div></figure></div>
         </div>
@@ -1574,7 +1596,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">Growth Scorecard</li></ol></nav>
       <span class="eyebrow">Digital Growth Scorecard · 15 questions · 5 minutes</span>
-      <h1 class="display">Where is your growth actually <span class="scribble">stuck<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>?</h1>
+      <h1 class="display">Where is your growth actually <span class="scribble">stuck</span>?</h1>
       <p class="lead">The Digital Growth Scorecard is a 15-question, 5-minute assessment for Florida business owners. It scores five areas — positioning, website, search visibility, conversion and follow-up — and shows your biggest bottleneck.</p>
     </div>
   </div>
@@ -1584,7 +1606,7 @@ ul.fit li:first-child { border-top: 0; }
   <div class="wrap grid">
     <div class="col-5 stack-lg">
       <h2 class="h3">What you get</h2>
-      <ul class="fit fit--yes" style="display:block">
+      <ul class="fit fit--yes fit--stack">
         <li>Your score across five areas</li>
         <li>Your #1 priority</li>
         <li>Three practical next steps you can take this month</li>
@@ -1634,7 +1656,7 @@ ul.fit li:first-child { border-top: 0; }
         <p class="label">Your #1 priority · <span id="sc-weakest"></span></p>
         <p class="body" id="sc-why"></p>
         <h2 class="h3">Three next steps for this month</h2>
-        <ol class="steps" id="sc-steps"></ol>
+        <ol class="steps steps--compact" id="sc-steps"></ol>
         <p class="small">Recommended reading: <a class="link" id="sc-article" href="#insights"></a></p>
       </div>
       <div class="form-panel">
@@ -1654,7 +1676,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">Insights</li></ol></nav>
       <span class="eyebrow">Insights</span>
-      <h1 class="display">Insights for Florida <span class="scribble">business owners<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span></h1>
+      <h1 class="display">Insights for Florida <span class="scribble">business owners</span></h1>
       <p class="lead">Practical thinking on websites, local search and growth — written for owners, not marketers.</p>
     </div>
   </div>
@@ -1727,7 +1749,7 @@ ul.fit li:first-child { border-top: 0; }
         <p class="lead">Your analytics show visitors. Your phone doesn’t ring. The gap between the two is almost never the design — it’s five small decisions about what a visitor sees, believes and can do next.</p>
         <div class="author mt-2">
           <div class="photo photo--square" role="img" aria-label="Áron Ritók-Filip"><span class="photo__note"><span></span><span></span></span></div>
-          <div><p style="font-weight:500">Áron Ritók-Filip</p><p class="caption">Digital Growth Strategist · <time datetime="2026-09-24">September 24, 2026</time></p></div>
+          <div><p class="author__name">Áron Ritók-Filip</p><p class="caption">Digital Growth Strategist · <time datetime="2026-09-24">September 24, 2026</time></p></div>
         </div>
       </div>
     </div>
@@ -1834,7 +1856,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-9">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">Services</li></ol></nav>
       <span class="eyebrow">Services · Southwest Florida</span>
-      <h1 class="h1">One growth system. <span class="scribble">Three ways<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span> to build it.</h1>
+      <h1 class="h1">One growth system. <span class="scribble">Three ways</span> to build it.</h1>
       <p class="lead">Strategy, website design and local SEO for established Florida service businesses — planned together, built together and measured by the qualified opportunities they create.</p>
     </div>
   </div>
@@ -1963,7 +1985,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-7">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li aria-current="page">Digital Growth Strategy</li></ol></nav>
       <span class="eyebrow">Digital Growth Strategy · Florida</span>
-      <h1 class="display">Find the <span class="scribble">growth<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span> hiding in your business.</h1>
+      <h1 class="display">Find the <span class="scribble">growth</span> hiding in your business.</h1>
       <p class="lead">Digital growth strategy for Florida business owners — uncovering opportunities across your website, marketing and customer journey, then turning them into a clear plan.</p>
       <div class="actions">
         <a class="btn" href="#strategy-call">Book a Strategy Call <span aria-hidden="true">→</span></a>
@@ -1980,7 +2002,7 @@ ul.fit li:first-child { border-top: 0; }
     <h2 class="h2 col-6">When more marketing isn’t the answer</h2>
     <div class="col-5 start-8 body stack-sm">
       <p>Many owners respond to slow growth by spending more on ads or hiring another agency. Often the real bottleneck sits somewhere else: an unclear offer, a website that doesn’t convert, leads that go unanswered for hours, or no data on what actually works.</p>
-      <p style="color:var(--c-ink)">Strategy finds that bottleneck first — so every dollar after it works harder.</p>
+      <p class="text-ink">Strategy finds that bottleneck first — so every dollar after it works harder.</p>
     </div>
   </div>
 </section>
@@ -2008,23 +2030,20 @@ ul.fit li:first-child { border-top: 0; }
       <p class="label"><span class="label__num">02</span> Deliverables</p>
       <h2 class="h2">What you get</h2>
     </div>
-    <ol class="process" style="--steps:3">
+    <ol class="process process--3">
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">01</span>
         <h3 class="h3">Growth audit</h3>
         <p>A clear picture of where you are today, with evidence.</p>
       </li>
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">02</span>
         <h3 class="h3">90-day growth roadmap</h3>
         <p>Prioritized actions, owners, budgets and targets.</p>
       </li>
       <li class="process__step">
-        <span class="process__dot" aria-hidden="true"></span>
         <span class="process__num">03</span>
-        <h3 class="h3">Ongoing strategic partnership <span class="muted" style="font-weight:400">(optional)</span></h3>
+        <h3 class="h3">Ongoing strategic partnership <span class="muted">(optional)</span></h3>
         <p>Monthly strategy sessions, performance reviews and a partner for the decisions in between.</p>
       </li>
     </ol>
@@ -2071,7 +2090,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li aria-current="page">Local SEO</li></ol></nav>
       <span class="eyebrow">Local SEO · Southwest Florida</span>
-      <h1 class="display">Be the business Florida customers <span class="scribble">find first<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>.</h1>
+      <h1 class="display">Be the business Florida customers <span class="scribble">find first</span>.</h1>
       <p class="lead">Local SEO for Fort Myers, Naples and Cape Coral businesses that want to show up in Google Maps and search results when customers are ready to buy.</p>
       <div class="actions">
         <a class="btn" href="#strategy-call">Book a Strategy Call <span aria-hidden="true">→</span></a>
@@ -2110,7 +2129,7 @@ ul.fit li:first-child { border-top: 0; }
 <section class="section" id="honest">
   <div class="wrap grid">
     <div class="col-8 start-3 honest">
-      <p class="label" style="border:0;padding:0"><span class="label__num">02</span> Expectations</p>
+      <p class="label label--plain"><span class="label__num">02</span> Expectations</p>
       <h2 class="h2">An honest word on SEO</h2>
       <p class="body">No one can guarantee rankings, and anyone who does is guessing. What I promise is a clear plan, consistent execution and transparent reporting. Most local businesses see meaningful movement within 3–6 months, depending on competition.</p>
     </div>
@@ -2171,7 +2190,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li aria-current="page">Website Design &amp; Development</li></ol></nav>
       <span class="eyebrow">Website Design &amp; Development · Fort Myers &amp; Naples</span>
-      <h1 class="display">Not a website. A <span class="scribble">digital sales system<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>.</h1>
+      <h1 class="display">Not a website. A <span class="scribble">digital sales system</span>.</h1>
       <p class="lead">Strategic website design and development for Southwest Florida businesses — built around how your customers decide, and measured by the calls and requests it creates.</p>
       <div class="actions">
         <a class="btn" href="#strategy-call">Book a Strategy Call <span aria-hidden="true">→</span></a>
@@ -2287,7 +2306,7 @@ ul.fit li:first-child { border-top: 0; }
     <div class="hero__text col-8">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="#home">Home</a></li><li aria-current="page">Strategy Call</li></ol></nav>
       <span class="eyebrow">Strategy Call · 30 minutes · Free</span>
-      <h1 class="display">Book a <span class="scribble">strategy call<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span></h1>
+      <h1 class="display">Book a <span class="scribble">strategy call</span></h1>
       <p class="lead">30 minutes with Áron to look at your business, your goals and where growth is getting stuck. No pitch deck, no obligation.</p>
     </div>
   </div>
@@ -2373,7 +2392,7 @@ ul.fit li:first-child { border-top: 0; }
             </fieldset>
             <div class="actions mt-4">
               <button class="btn" type="submit">Continue to choose a time <span aria-hidden="true">→</span></button>
-              <button class="arrow-link" type="button" id="call-back" style="background:none;border:0;cursor:pointer">← Back</button>
+              <button class="arrow-link" type="button" id="call-back">← Back</button>
             </div>
           </fieldset>
 
@@ -2403,14 +2422,14 @@ ul.fit li:first-child { border-top: 0; }
       <hr class="rule">
       <div class="stack-sm">
         <h2 class="h3">What happens on the call</h2>
-        <ul class="fit fit--yes" style="display:block">
+        <ul class="fit fit--yes fit--stack">
           <li>We talk through your business, customers and current marketing</li>
           <li>I share first observations on your website and search visibility (I’ll look before we meet)</li>
           <li>We decide together whether a growth audit makes sense</li>
         </ul>
       </div>
-      <figure class="testimonial" style="gap:var(--s-2)">
-        <blockquote style="font-size:1.5rem"><span class="tbd">[One short client testimonial]</span></blockquote>
+      <figure class="testimonial testimonial--sm">
+        <blockquote><span class="tbd">[One short client testimonial]</span></blockquote>
         <figcaption><span class="tbd">[Name, Company]</span></figcaption>
       </figure>
     </aside>
@@ -2423,7 +2442,7 @@ ul.fit li:first-child { border-top: 0; }
   <div class="wrap grid">
     <div class="hero__text col-8">
       <span class="eyebrow">Booked</span>
-      <h1 class="display">Thank you. <span class="scribble">Talk soon<svg viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M6 20 C 70 6, 130 28, 200 14 S 320 6, 394 18"/></svg></span>.</h1>
+      <h1 class="display">Thank you. <span class="scribble">Talk soon</span>.</h1>
       <p class="lead">A confirmation email is on its way. Before we meet, I’ll look at your website and your search visibility, so we can spend the 30 minutes on what matters.</p>
       <p class="body">If something changes, just reply to the confirmation email. I personally reply to every message within one business hour.</p>
     </div>

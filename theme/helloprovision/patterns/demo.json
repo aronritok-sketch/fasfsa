@@ -1,0 +1,186 @@
+{
+ "pages": [
+  {
+   "path": "home",
+   "title": "Home",
+   "pattern": "hpv/page-home",
+   "seo_title": "Áron Ritók-Filip — Digital Growth Strategist in Florida",
+   "seo_description": "I help Southwest Florida businesses turn their website, SEO and marketing into a predictable lead generation system. Fort Myers, Naples, Cape Coral.",
+   "page_type": "",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "about",
+   "title": "About",
+   "pattern": "hpv/page-about",
+   "seo_title": "About Áron Ritók-Filip — Founder of HelloProVision",
+   "seo_description": "Entrepreneur, founder of HelloProVision and digital growth strategist. The story, principles and proof behind the work with Florida businesses.",
+   "page_type": "about",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "services",
+   "title": "Services",
+   "pattern": "hpv/page-services",
+   "seo_title": "Digital Growth Services for Florida Businesses — Áron Ritók-Filip",
+   "seo_description": "Strategy, website design and local SEO, connected into one growth system for Southwest Florida service businesses.",
+   "page_type": "services_hub",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "services/website-design-development",
+   "title": "Website Design & Development",
+   "pattern": "hpv/page-service-website",
+   "seo_title": "Website Design in Fort Myers & Naples — Áron Ritók-Filip",
+   "seo_description": "Strategic website design and development for Florida service businesses. Fast, search-ready WordPress sites built to turn visits into calls.",
+   "page_type": "service",
+   "service_name": "Website Design & Development",
+   "noindex": false
+  },
+  {
+   "path": "services/local-seo",
+   "title": "Local SEO",
+   "pattern": "hpv/page-service-local-seo",
+   "seo_title": "Local SEO in Florida — SEO Consultant in Fort Myers",
+   "seo_description": "Get found in Google Maps and search across Fort Myers, Naples and Cape Coral. Local SEO with honest reporting on calls and leads.",
+   "page_type": "service",
+   "service_name": "Local SEO",
+   "noindex": false
+  },
+  {
+   "path": "services/digital-growth-strategy",
+   "title": "Digital Growth Strategy",
+   "pattern": "hpv/page-service-strategy",
+   "seo_title": "Digital Growth Strategy for Florida Businesses — Áron Ritók-Filip",
+   "seo_description": "Find the growth hiding across your website, marketing and customer journey. A research-based roadmap for established Florida businesses.",
+   "page_type": "service",
+   "service_name": "Digital Growth Strategy",
+   "noindex": false
+  },
+  {
+   "path": "strategy-call",
+   "title": "Book a Strategy Call",
+   "pattern": "hpv/page-strategy-call",
+   "seo_title": "Book a Strategy Call — Áron Ritók-Filip",
+   "seo_description": "A free 30-minute call to find where your growth is stuck. No pitch, no obligation.",
+   "page_type": "strategy_call",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "strategy-call/thank-you",
+   "title": "Thank You",
+   "pattern": "hpv/page-strategy-call-thank-you",
+   "seo_title": "Your Strategy Call Is Booked — Áron Ritók-Filip",
+   "seo_description": "Thanks for booking a strategy call.",
+   "page_type": "thank_you",
+   "service_name": "",
+   "noindex": true
+  },
+  {
+   "path": "growth-scorecard",
+   "title": "Growth Scorecard",
+   "pattern": "hpv/page-growth-scorecard",
+   "seo_title": "Digital Growth Scorecard for Florida Businesses",
+   "seo_description": "15 questions, 5 minutes: find out whether positioning, website, search or follow-up is your biggest bottleneck.",
+   "page_type": "scorecard",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "insights",
+   "title": "Insights",
+   "pattern": "hpv/page-insights",
+   "seo_title": "Insights for Florida Business Owners — Áron Ritók-Filip",
+   "seo_description": "Practical thinking on websites, local search and growth for Southwest Florida service businesses — written for owners, not marketers.",
+   "page_type": "",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "privacy-policy",
+   "title": "Privacy Policy",
+   "pattern": "hpv/page-privacy-policy",
+   "seo_title": "Privacy Policy — Áron Ritók-Filip",
+   "seo_description": "What personal information this website collects, why, and the choices you have.",
+   "page_type": "legal",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "terms",
+   "title": "Terms of Use",
+   "pattern": "hpv/page-terms",
+   "seo_title": "Terms of Use — Áron Ritók-Filip",
+   "seo_description": "The terms that apply when you use this website.",
+   "page_type": "legal",
+   "service_name": "",
+   "noindex": false
+  },
+  {
+   "path": "accessibility",
+   "title": "Accessibility Statement",
+   "pattern": "hpv/page-accessibility",
+   "seo_title": "Accessibility Statement — Áron Ritók-Filip",
+   "seo_description": "Our commitment to an accessible website, the standard we follow and how to report a problem.",
+   "page_type": "legal",
+   "service_name": "",
+   "noindex": false
+  }
+ ],
+ "case_studies": [
+  {
+   "slug": "imperial-kitchens",
+   "title": "Imperial Kitchens: from referrals-only to a steady flow of qualified inquiries",
+   "pattern": "hpv/case-study-body",
+   "industry": "Home services",
+   "excerpt": "Website strategy, local SEO and lead tracking for a premium remodeler.",
+   "seo_title": "Imperial Kitchens: from referrals-only to qualified inquiries — Case Study",
+   "seo_description": "How a Fort Myers kitchen remodeler turned its website and local search into a steady source of qualified inquiries. Case study template — facts pending client approval.",
+   "meta": {
+    "hpv_client": "Imperial Kitchens",
+    "hpv_location": "Fort Myers, Florida",
+    "hpv_services": "Website strategy & development, Local SEO, tracking",
+    "hpv_card_title": "From referrals-only to <span class=\"tbd\">[X]</span> qualified inquiries a month",
+    "hpv_featured": true
+   }
+  }
+ ],
+ "posts": [
+  {
+   "slug": "website-traffic-no-calls",
+   "title": "Why your website gets traffic but no calls",
+   "pattern": "hpv/article-traffic-no-calls",
+   "excerpt": "Your analytics show visitors. Your phone doesn’t ring. The gap between the two is almost never the design — it’s five small decisions about what a visitor sees, believes and can do next.",
+   "category": "websites",
+   "seo_title": "Why Your Website Gets Traffic but No Calls — Áron Ritók-Filip",
+   "seo_description": "Visitors arrive, look around and leave without calling. Five places where interested Florida customers quietly give up, and what to fix first.",
+   "date": "2026-09-24"
+  }
+ ],
+ "topics": [
+  {
+   "slug": "websites",
+   "name": "Websites",
+   "description": "Websites that sell: what makes a Florida service business website turn visits into calls."
+  },
+  {
+   "slug": "local-seo",
+   "name": "Local SEO",
+   "description": "Getting found locally: map pack, Google Business Profile, reviews and local pages."
+  },
+  {
+   "slug": "growth",
+   "name": "Growth",
+   "description": "Growth and conversion: follow-up, measurement and where marketing money actually pays back."
+  }
+ ],
+ "industries": [
+  "Home services",
+  "Hospitality & experiences",
+  "Local businesses"
+ ]
+}
