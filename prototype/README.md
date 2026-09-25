@@ -36,8 +36,8 @@ No dependencies beyond Python 3. The script produces:
 
 ## What's in place
 
-- Design direction: modern and urban. **Geist** (variable) for headlines and text, and **Geist Mono** only for small labels, numbers and the local-time readout. Both are self-hosted WOFF2 and OFL licensed. The layout has a dark night-city hero with a soft accent glow and a faint street grid, rounded cards, pill buttons, a transit-line process, a ticker band and a fading billboard wordmark in the footer.
-- Palette: Ink `#0E0F12`, Chalk `#F4F4F1`, White, Electric Cobalt `#3346FF` as the accent (white text on it: 6.1:1; as text on chalk: 5.5:1), and Sunset Coral `#FF6B4A`, used for highlighted words on dark backgrounds (6.8:1), small markers and the scorecard band. Section scopes (`.bg-ink`, `.bg-accent`, `.bg-mark`, `.bg-paper`) redefine the color tokens so the components inside adapt automatically. The prototype bar has an accent switcher (cobalt, sunset, emerald), and every combination passes WCAG AA.
+- Design direction A, **Wheatpaste**: the site reads like a street poster pasted on a Fort Myers wall. It uses **Anton** for poster headlines, **Archivo** (variable width and weight) for text and UI, and **Caveat Brush** for handwritten notes. All three are self-hosted WOFF2 and OFL licensed. Details: paper grain, tape strips, rotated stickers, a marker circle and scribble underlines that draw themselves, halftone polaroids where photos will go, taped-up project screenshots, a tilted fluoro ticker band and a billboard wordmark in the footer.
+- Palette: Paper `#EFE9DC`, Ink `#121212`, Fluoro Pink `#FF3EA5` and Safety Orange `#FF5A1F`. Pink and orange are used only as surfaces and marks (ink on pink 5.8:1, ink on orange 6.0:1) and never as text on paper. Handwritten notes on paper use Rust `#B8340A` (4.9:1). Section scopes (`.bg-paper`, `.bg-accent` = pink, `.bg-mark` = orange, `.bg-ink`) redefine the color tokens.
 - Project imagery: `<x-project slug="…">` and `<x-photo src="…">` tags in the page sources. The build swaps each one for the real image if its file exists in `src/assets/img/`, and otherwise shows a placeholder frame. See `src/assets/img/README.md` for the expected file names.
 - Title, meta description, canonical and OG tags per page (§8), plus a JSON-LD `@graph` with Person, ProfessionalService, WebSite, WebPage or ProfilePage, BreadcrumbList, and Service or BlogPosting depending on the page.
 - GA4-ready `dataLayer` events: `cta_click`, `form_start`, `form_submit`, `scorecard_start`, `scorecard_complete`, `booking_open`, `click_to_call`, `click_to_email` (§10).
@@ -46,7 +46,7 @@ No dependencies beyond Python 3. The script produces:
 
 ## Facts to verify
 
-Every unverified fact is wrapped in `<span class="tbd">[…]</span>` and highlighted. The dark bar at the bottom right counts them on each page and can hide the highlighting. Before launch, each one must be replaced with a verified fact or removed. See the blueprint's "Open inputs before launch" list.
+Every unverified fact is wrapped in `<span class="tbd">[…]</span>` and highlighted. The black bar at the bottom right counts them on each page and can hide the highlighting. Before launch, each one must be replaced with a verified fact or removed. See the blueprint's "Open inputs before launch" list.
 
 Photo frames stay placeholders until the files arrive: project screenshots from helloprovision.com, and portraits from the photo shoot. The blueprint rules out stock photos of people.
 

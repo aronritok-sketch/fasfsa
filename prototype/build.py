@@ -26,7 +26,7 @@ HERE = Path(__file__).resolve().parent
 SRC = HERE / "src"
 DIST = HERE / "dist"
 
-GOOGLE_FONTS = "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
+GOOGLE_FONTS = "https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,100..900&family=Caveat+Brush&display=swap"
 
 
 # ---------------------------------------------------------------- pages

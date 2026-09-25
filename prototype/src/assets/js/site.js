@@ -91,15 +91,6 @@
     tick(); setInterval(tick, 30000);
   }
 
-  /* Prototype only: accent color switcher */
-  function setAccent(name) {
-    if (name === 'cobalt') root.removeAttribute('data-accent'); else root.setAttribute('data-accent', name);
-    doc.querySelectorAll('.swatch').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.accent === name)); });
-    try { localStorage.setItem('hpv-accent', name); } catch (e) {}
-  }
-  doc.querySelectorAll('.swatch').forEach(function (b) { b.addEventListener('click', function () { setAccent(b.dataset.accent); }); });
-  try { var saved = localStorage.getItem('hpv-accent'); if (saved) setAccent(saved); } catch (e) {}
-
   if (toggle) toggle.addEventListener('click', function () {
     var hidden = root.classList.toggle('hide-tbd');
     toggle.textContent = hidden ? 'Show marks' : 'Hide marks';
