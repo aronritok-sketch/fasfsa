@@ -11,8 +11,8 @@
 <meta property="og:description" content="Get found in Google Maps and search across Fort Myers, Naples and Cape Coral. Local SEO with honest reporting on calls and leads.">
 <meta property="og:url" content="https://example.com/services/local-seo/">
 <meta property="og:site_name" content="Áron Ritók-Filip">
-<meta name="theme-color" content="#F2F6EF">
-<link rel="preload" href="../../assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F0EFEA">
+<link rel="preload" href="../../assets/fonts/martian-mono-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/css/main.css">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -153,7 +153,8 @@
         <li><a href="../../about/index.html" data-nav="about">About</a></li>
         <li><a href="../../insights/index.html" data-nav="insights">Insights</a></li>
       </ul>
-      <a class="btn btn--sm" href="../../strategy-call/index.html" data-cta="header">Book a Strategy Call</a>
+      <span class="local-time" aria-label="Local time in Fort Myers"><i aria-hidden="true"></i>Fort Myers <b id="local-time">--:--</b></span>
+      <a class="btn btn--sm" href="../../strategy-call/index.html" data-cta="header">Book a Strategy Call <span aria-hidden="true">→</span></a>
       <a class="btn btn--sm header-call" href="../../strategy-call/index.html" data-cta="header-mobile">Book a call</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" id="nav-toggle">Menu</button>
     </nav>
@@ -166,7 +167,7 @@
       <span class="wordmark__name">Áron Ritók-Filip</span>
       <span class="wordmark__role">Digital Growth Strategist</span>
     </a>
-    <button class="nav-toggle" type="button" id="nav-close" style="display:inline-flex">Close</button>
+    <button class="nav-toggle" type="button" id="nav-close" style="display:inline-flex">Close ✕</button>
   </div>
   <ul class="mobile-menu__list">
     <li><a href="../../services/index.html">Services <span aria-hidden="true">→</span></a></li>
@@ -206,10 +207,10 @@
   </div>
 </section>
 
-<section class="section bg-mist" id="includes">
+<section class="section bg-paper" id="includes">
   <div class="wrap">
     <div class="section-head">
-      <p class="label"><span class="label__num">01</span> — What’s included</p>
+      <p class="label"><span class="label__num">01</span> What’s included</p>
       <h2 class="h2">What Local SEO growth includes</h2>
     </div>
     <div class="features features--3">
@@ -226,7 +227,7 @@
 <section class="section" id="honest">
   <div class="wrap grid">
     <div class="col-8 start-3 honest">
-      <p class="label" style="border:0;padding:0"><span class="label__num">02</span> — Expectations</p>
+      <p class="label" style="border:0;padding:0"><span class="label__num">02</span> Expectations</p>
       <h2 class="h2">An honest word on SEO</h2>
       <p class="body">No one can guarantee rankings, and anyone who does is guessing. What I promise is a clear plan, consistent execution and transparent reporting. Most local businesses see meaningful movement within 3–6 months, depending on competition.</p>
     </div>
@@ -236,7 +237,7 @@
 <section class="section section--flush-top" id="reading">
   <div class="wrap">
     <div class="section-head">
-      <p class="label"><span class="label__num">03</span> — Reading</p>
+      <p class="label"><span class="label__num">03</span> Reading</p>
       <h2 class="h2">From the Local SEO notebook</h2>
     </div>
     <div class="insights">
@@ -259,7 +260,7 @@
   </div>
 </section>
 
-<section class="section bg-mist" id="faq">
+<section class="section bg-paper" id="faq">
   <div class="wrap grid">
     <div class="col-4"><h2 class="h2">Local SEO FAQ</h2></div>
     <div class="col-8 faq">
@@ -323,6 +324,7 @@
         </ul>
       </div>
     </div>
+    <p class="footer__giant" aria-hidden="true">Áron Ritók<span>-</span>Filip</p>
     <div class="footer__bottom">
       <p>© 2026 Áron Ritók-Filip · Founder, HelloProVision</p>
       <ul>
@@ -334,9 +336,13 @@
   </div>
 </footer>
 
-<div class="proto-bar" id="proto-bar" role="region" aria-label="Prototype notes">
-  <span>Prototype · <span class="proto-bar__count" id="tbd-count">0</span> facts to verify</span>
+<div class="proto-bar" id="proto-bar" role="region" aria-label="Prototype controls">
+  <span><span class="proto-bar__label">Proto · </span><span class="proto-bar__count" id="tbd-count">0</span><span class="proto-bar__label"> facts to verify</span></span>
   <button type="button" id="tbd-toggle" aria-pressed="true">Hide marks</button>
+  <span class="proto-bar__label" aria-hidden="true">· Color</span>
+  <button type="button" class="swatch" data-accent="cobalt" aria-pressed="true" title="Cobalt"><i style="background:#2438FF"></i><span class="visually-hidden">Cobalt</span></button>
+  <button type="button" class="swatch" data-accent="orange" aria-pressed="false" title="Signal orange"><i style="background:#FF4D17"></i><span class="visually-hidden">Signal orange</span></button>
+  <button type="button" class="swatch" data-accent="emerald" aria-pressed="false" title="Emerald"><i style="background:#007A51"></i><span class="visually-hidden">Emerald</span></button>
 </div>
 
 <script src="../../assets/js/site.js" defer></script>

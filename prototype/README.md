@@ -36,8 +36,8 @@ No dependencies beyond Python 3. The script produces:
 
 ## What's in place
 
-- Type scale, 12-column grid and components from blueprint §2 and §6, with Instrument Serif and Inter self-hosted as WOFF2 (OFL licensed).
-- Palette: green pastel, replacing the blueprint's sand and khaki at the client's request. Mint White `#F2F6EF`, Sage Mist `#E3EDE1`, Pastel Green `#CFE2CF`, Soft Mint `#B7D6C0`, Eucalyptus `#8FB89C` (lines and dots only), Deep Green Charcoal `#1D2A23`, Forest `#3B6A4C` for accent text (5.7:1 on the background), and `#4E6256` for captions. All text colors pass WCAG AA on the surfaces they sit on.
+- Design direction: urban, monospace and high-contrast. **Martian Mono** (variable width and weight) for headlines, labels and UI, and **IBM Plex Mono** for running text. Both are self-hosted WOFF2 and OFL licensed. The layout uses a 12-column grid with 1px ink rules, hard-shadow buttons, a transit-map process line, a ticker band and a billboard wordmark in the footer.
+- Palette: Concrete `#F0EFEA`, Ink `#0D0D0F`, Cobalt `#2438FF` as the accent (white text on it: 6.8:1), Sun Yellow `#FFE033` as the highlighter behind key words, and Signal Orange `#FF4D17` for small markers only. Section scopes (`.bg-accent`, `.bg-ink`, `.bg-mark`, `.bg-paper`) redefine the color tokens so the components inside invert automatically. The prototype bar has an accent switcher (cobalt, orange, emerald) for choosing the brand color, and every combination passes WCAG AA.
 - Project imagery: `<x-project slug="…">` and `<x-photo src="…">` tags in the page sources. The build swaps each one for the real image if its file exists in `src/assets/img/`, and otherwise shows a placeholder frame. See `src/assets/img/README.md` for the expected file names.
 - Title, meta description, canonical and OG tags per page (§8), plus a JSON-LD `@graph` with Person, ProfessionalService, WebSite, WebPage or ProfilePage, BreadcrumbList, and Service or BlogPosting depending on the page.
 - GA4-ready `dataLayer` events: `cta_click`, `form_start`, `form_submit`, `scorecard_start`, `scorecard_complete`, `booking_open`, `click_to_call`, `click_to_email` (§10).
