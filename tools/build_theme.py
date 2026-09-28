@@ -2,14 +2,14 @@
 """Build the WordPress theme's generated parts from the approved HTML prototype.
 
     python3 tools/build_theme.py          # CSS + patterns
-    python3 tools/build_theme.py --zip    # … and theme/dist/helloprovision-<version>.zip for upload
+    python3 tools/build_theme.py --zip    # … and theme/dist/helloprovision-founder-<version>.zip for upload
 
 The prototype (prototype/src) is the single source of truth for design and copy.
 This script:
 
-  1. builds theme/helloprovision/assets/css/main.css
+  1. builds theme/helloprovision-founder/assets/css/main.css
        = prototype main.css (without @font-face; fonts come from theme.json)
-       + theme/helloprovision/assets/css/src/wordpress.css
+       + theme/helloprovision-founder/assets/css/src/wordpress.css
   2. converts every prototype page into Gutenberg block markup and writes
        patterns/page-*.php      full-page patterns (also used by the demo importer)
        patterns/section-*.php   one pattern per homepage section
@@ -32,7 +32,7 @@ from bs4 import BeautifulSoup, NavigableString, Comment, Tag
 
 ROOT = Path(__file__).resolve().parent.parent
 PROTO = ROOT / "prototype" / "src"
-THEME = ROOT / "theme" / "helloprovision"
+THEME = ROOT / "theme" / "helloprovision-founder"
 PATTERNS = THEME / "patterns"
 
 PROJECTS = {
@@ -365,7 +365,7 @@ def main():
         meta, html = parse_page(PROTO / "pages" / source)
         content = convert(html, key)
         slug = f"hpv/page-{key}"
-        write_pattern(f"page-{key}.php", f"Page: {title}", slug, "hpv-pages", content,
+        write_pattern(f"page-{key}.php", f"Page: {title}", slug, "hpvf-pages", content,
                       description=meta.get("description", ""), inserter=kind == "page", post_types="page")
         if kind == "page":
             manifest["pages"].append({
@@ -393,14 +393,14 @@ def main():
         content = conv.node(sec)
         conv.scorecard_done = False
         label = names.get(ident, "Ticker band" if ident == "ticker" else ident)
-        write_pattern(f"section-{ident}.php", f"Section: {label}", f"hpv/section-{ident}", "hpv-sections", content)
+        write_pattern(f"section-{ident}.php", f"Section: {label}", f"hpv/section-{ident}", "hpvf-sections", content)
         if ident == "scorecard":
-            write_pattern("scorecard-band.php", "Scorecard band", "hpv/scorecard-band", "hpv-sections", content, inserter=False)
+            write_pattern("scorecard-band.php", "Scorecard band", "hpv/scorecard-band", "hpvf-sections", content, inserter=False)
 
     # Case study body (the template renders the hero).
     meta, html = parse_page(PROTO / "pages" / "case-study-imperial-kitchens.html")
     body = convert(html, "case-study", skip_first_section=True)
-    write_pattern("case-study-body.php", "Case study: full story layout", "hpv/case-study-body", "hpv-pages", body,
+    write_pattern("case-study-body.php", "Case study: full story layout", "hpv/case-study-body", "hpvf-pages", body,
                   description="Hero image, snapshot, story, results, lessons, testimonial and call to action.", post_types="case_study")
     manifest["case_studies"].append({
         "slug": "imperial-kitchens",
@@ -408,10 +408,10 @@ def main():
         "pattern": "hpv/case-study-body", "industry": "Home services",
         "excerpt": "Website strategy, local SEO and lead tracking for a premium remodeler.",
         "seo_title": meta.get("title", ""), "seo_description": meta.get("description", ""),
-        "meta": {"hpv_client": "Imperial Kitchens", "hpv_location": "Fort Myers, Florida",
-                 "hpv_services": "Website strategy & development, Local SEO, tracking",
-                 "hpv_card_title": "From referrals-only to <span class=\"tbd\">[X]</span> qualified inquiries a month",
-                 "hpv_featured": True},
+        "meta": {"hpvf_client": "Imperial Kitchens", "hpvf_location": "Fort Myers, Florida",
+                 "hpvf_services": "Website strategy & development, Local SEO, tracking",
+                 "hpvf_card_title": "From referrals-only to <span class=\"tbd\">[X]</span> qualified inquiries a month",
+                 "hpvf_featured": True},
     })
 
     # Sample article: only the body; single.php renders hero and sidebar.
@@ -421,7 +421,7 @@ def main():
     art_blocks = "\n\n".join(filter(None, (Converter("article").node(n) for n in art.children)))
     lead = soup.select_one("p.lead").get_text(" ", strip=True)
     write_pattern("article-traffic-no-calls.php", "Article: Why your website gets traffic but no calls",
-                  "hpv/article-traffic-no-calls", "hpv-pages", art_blocks, inserter=False)
+                  "hpv/article-traffic-no-calls", "hpvf-pages", art_blocks, inserter=False)
     manifest["posts"].append({
         "slug": "website-traffic-no-calls", "title": "Why your website gets traffic but no calls",
         "pattern": "hpv/article-traffic-no-calls", "excerpt": lead, "category": "websites",
@@ -441,12 +441,12 @@ def main():
 
     if "--zip" in sys.argv:
         version = re.search(r"Version:\s*(\S+)", (THEME / "style.css").read_text(encoding="utf-8")).group(1)
-        out = ROOT / "theme" / "dist" / f"helloprovision-{version}.zip"
+        out = ROOT / "theme" / "dist" / f"helloprovision-founder-{version}.zip"
         out.parent.mkdir(exist_ok=True)
         with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
             for f in sorted(THEME.rglob("*")):
                 if f.is_file() and not f.name.startswith("."):
-                    z.write(f, Path("helloprovision") / f.relative_to(THEME))
+                    z.write(f, Path("helloprovision-founder") / f.relative_to(THEME))
         print(f"Packaged {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
 
